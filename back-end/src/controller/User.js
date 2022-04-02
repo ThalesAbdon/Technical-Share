@@ -1,6 +1,9 @@
+const UserModel = require('../models/User')
+
 class User{
     async get(req,res){
-    return res.status(200).json("Hello Dev")
+        const user = await UserModel.find()
+        return res.status(200).json(user)
     }
 }
 
