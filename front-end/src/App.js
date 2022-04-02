@@ -1,17 +1,13 @@
-import './App.css';
-import image from './images/FCameraIconWhite.png'
+import './App.scss';
+import Navigation from './components/Navigation';
+import Profile from './components/Profile';
 function App() {
   return (
     <div className='App'>
-      <header className='Header'>
-       <div>
-       <img className='LogoFCameraWhite' src = {image} alt="LogoFCameraWhite"/>
-       </div>
-      </header>
 
-
-
-      <footer>
+		<Navigation/> 
+		<Profile/>
+      {/* <footer>
 		<div class="main-content">
 			<div class="left box">
 				<h2> Sobre nós</h2>
@@ -60,7 +56,7 @@ function App() {
 				<span class="far fa-copyright"> Apenas um teste</span>
 			</div>
 		</div>
-	</footer>
+	</footer> */}
      
 
      
