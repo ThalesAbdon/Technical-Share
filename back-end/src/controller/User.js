@@ -13,8 +13,16 @@ class User{
     }
 
     async update(req,res){
+       
+       
         if(req.file){
-            
+            const avatar = `http://localhost:4000/files/images/${req.file.filename}`
+            console.log(avatar)
+            await UserModel.findByIdAndUpdate({_id:req.params.id},{
+                $set: {avatar}
+                
+            })
+            return res.status(200).json({message:"Usuário atualizado!"})
         } else{
             await UserModel.findByIdAndUpdate({_id:req.params.id},{
                 $set: req.body
