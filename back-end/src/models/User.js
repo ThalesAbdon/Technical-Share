@@ -1,7 +1,8 @@
 const mongoose = require('../database/database')
 const UserSchema = new mongoose.Schema({
 avatar:{
-    type: String
+    type: String,
+    default: 'https://www.letheshouse.pt/wp-content/uploads/2018/07/user-icon.jpg'
 },
 name:{
     type: String,
