@@ -22,6 +22,11 @@ class User{
             return res.status(200).json({message:"Usuário atualizado!"})
         }
     }
+
+    async delete(req,res){
+            await UserModel.findByIdAndDelete({_id:req.params.id})
+            return res.status(200).json({message:"Usuário Deletado!"})
+    }
 }
 
 module.exports = new User()
