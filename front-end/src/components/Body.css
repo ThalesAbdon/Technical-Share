@@ -1,0 +1,44 @@
+.titulo {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 130px;
+    flex-direction: column;
+    font-family: "Roboto Mono";
+    font-size: 40px;
+    margin-left: 50px;
+
+}
+.content-container {
+    display: flex;
+    justify-content: space-between;
+}
+.imagem {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    margin-top: 80px;
+    margin-right: 30px;
+    object-fit: cover;
+}
+
+.destaque {
+    display: inline;
+    padding: 8px;
+    background-color: #3e3576;
+    border-radius: 24px;
+    line-break: none;
+}
+
+.sub-titulo-container {
+    margin-top: 56px;
+}
+.botao {
+    font-size: 40px;
+    margin-left: 50px;
+    border-radius: 24px;
+    padding: 32px;
+    border: none;
+    background-color: #36357E;
+    cursor: pointer;
+    margin-top: -20px;
+}
