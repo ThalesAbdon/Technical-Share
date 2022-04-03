@@ -11,6 +11,17 @@ class User{
        await UserModel.create({name,work,seniority,skills,bio})
        return res.status(201).json({message:"Usuário criado!"})
     }
+
+    async update(req,res){
+        if(req.file){
+            
+        } else{
+            await UserModel.findByIdAndUpdate({_id:req.params.id},{
+                $set: req.body
+            })
+            return res.status(200).json({message:"Usuário atualizado!"})
+        }
+    }
 }
 
 module.exports = new User()
