@@ -1,21 +1,17 @@
-import './App.css';
-import Cadastrar from './Pages/cadastro';
-import Header from  './Components/Header';
-import Footer from './Components/Footer';
+import './App.scss';
+import Navigation from './components/Navigation';
+import Profile from './components/Profile';
+import Header from './components/Header';
+import Filters from './components/Filters';
+
 function App() {
   return (
     <div className='App'>
-		<Header/>
-		<Cadastrar/>
-		<Footer/>
-      {/*
 
-
-
-      
-     
-
-    */}
+		<Navigation/> 
+		<Header />
+		<Filters/>
+		<Profile/>
     </div>
   );
 }
