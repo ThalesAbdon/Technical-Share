@@ -44,9 +44,37 @@ img {
 
 .schedule {
     background-color: grey;
-    height: 50px;
-    border-radius: 0px 0px 20px 20px;
-    padding: 3px 5px;
+    height: auto;
     text-align: center;
     color: #fff;
+}
+
+.schedule-item {
+    background-color: #ccc;
+    display: inline-flex;
+    width: auto;
+    margin:13px 5px 0px 0px;
+    text-align: center;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+.schedule-item .agenda {
+    width: fit-content;
+}
+
+.skills-item {
+    display: inline-flex;
+    background-color: #f0f0f0;
+    border-radius:20px;
+    width: auto;
+    padding:3px 6px;
+    margin: 2px 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+ul,li {
+    padding:unset;
+    list-style-type: none;
 }

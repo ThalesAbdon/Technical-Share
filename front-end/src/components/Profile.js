@@ -7,7 +7,7 @@ const Profile = () => (
 
     <Container className="px-5 py-3">
         <Row className="gap-3">
-        <Col xs={12} md={6}>
+        <Col xs={12} md={6} className="pb-3">
         <Card>
         <Card.Body>
             <img src={imgEx}/>
@@ -19,10 +19,27 @@ const Profile = () => (
             <Card.Text className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Etiam erat velit scelerisque in dictum.  Laoreet id donec ultrices tincidunt arcu non sodales neque.
             </Card.Text>
+            <div className="skills">
+                <ul>
+                    <li className="skills-item">UX Designer</li>
+                    <li className="skills-item">Back-end Java</li>
+                    <li className="skills-item">Front-end Angular</li>
+                </ul>
+            </div>
         </Card.Body>
+        <div className="available">Estou disponível!</div>
+            <div className="schedule">
+                <Row className="d-flex align-items-center">
+                <ul>
+                    <li className="schedule-item">10:00</li>
+                    <li className="schedule-item">11:00</li>
+                    <li className="schedule-item">12:00</li>
+                    <li className="schedule-item">13:00</li>
+                    <li className="schedule-item agenda">Agendar</li>
+                </ul>
+                </Row>
+            </div>
         </Card>
-            <div className="available">Estou disponível!</div>
-            <div className="schedule d-flex align-items-center">aqui fica a agenda, né</div>
         </Col>
 
         <Col>
@@ -37,10 +54,28 @@ const Profile = () => (
             <Card.Text className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Etiam erat velit scelerisque in dictum.  Laoreet id donec ultrices tincidunt arcu non sodales neque.
             </Card.Text>
+            <div className="skills">
+                <ul>
+                    <li className="skills-item">UX Designer</li>
+                    <li className="skills-item">Back-end Java</li>
+                    <li className="skills-item">Front-end Angular</li>
+                </ul>
+            </div>
         </Card.Body>
+        <div className="available">Estou disponível!</div>
+            <div className="schedule">
+                <Row className="d-flex align-items-center">
+                <ul>
+                    <li className="schedule-item">10:00</li>
+                    <li className="schedule-item">11:00</li>
+                    <li className="schedule-item">12:00</li>
+                    <li className="schedule-item">13:00</li>
+                    <li className="schedule-item agenda">Agendar</li>
+                </ul>
+                </Row>
+            </div>
         </Card>
-            <div className="available">Estou disponível!</div>
-            <div className="schedule d-flex align-items-center">aqui fica a agenda, né</div>
+
         </Col>
         </Row>
     </Container>
