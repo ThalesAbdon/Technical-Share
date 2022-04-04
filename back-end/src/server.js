@@ -1,4 +1,4 @@
 const server = require('./app/app')
-server.listen(4000,()=>{
-    console.log('rodando na porta 4000');
+server.listen(process.env.PORT,()=>{
+    console.log(`rodando na porta ${process.env.PORT}`);
 })
