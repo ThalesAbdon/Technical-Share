@@ -1,27 +1,18 @@
+@import "~bootstrap/scss/bootstrap";
+
+/* fontes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .App {
   background-color: #FFF;
 }
 
 .Header{
-  display: flex;
   max-width: 100%;
   height: 50px;
   background-color: #fe4400;
 }
 
-.Header button{
-  position: absolute;
-  right: 11.5%;
-  bottom: 96.75%;
-  width: 100px;
-  color: #000;
-}
-
-.Header button:hover{
-
- background-color: white;
-}
 .LogoFCameraWhite{
   height: 50px;
 }
