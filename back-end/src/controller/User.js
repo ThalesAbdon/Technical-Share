@@ -38,6 +38,12 @@ class User {
     await UserModel.findByIdAndDelete({ _id: req.params.id });
     return res.status(200).json({ message: "Usuário Deletado!" });
   }
+
+  async search(req,res){
+    const user = await UserModel.find(req.query)
+    console.log(req.query)
+    return res.status(200).json(user)
+  }
 }
 
 module.exports = new User();
