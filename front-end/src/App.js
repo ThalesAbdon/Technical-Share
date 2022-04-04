@@ -1,8 +1,8 @@
 import './App.scss';
-import Navigation from './Components/Navigation';
-import Profile from './Components/Profile';
-import Header from './Components/Header';
-import Filters from './Components/Filters';
+import Navigation from './components/Navigation';
+import Profile from './components/Profile';
+import Header from './components/Header';
+import Filters from './components/Filters';
 
 function App() {
   return (
