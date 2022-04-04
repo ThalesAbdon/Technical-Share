@@ -1,19 +1,16 @@
-import React from "react";
-import './Header.scss';
-import {Container, InputGroup, FormControl, Row} from 'react-bootstrap';
+import React from "react"
+import image from '../images/FCameraIconWhite.png'
+const Header = () =>{
+    return(
+        <header className='Header'>
+       <div>
+       <img className='LogoFCameraWhite' src = {image} alt="LogoFCameraWhite"/>
+       </div>
+	   <div>
+		   <button className = "button-Enviar" > Cadastrar </button>
+	   </div>
+      </header>
+    )
+}
 
-
-const Header = () => (
-    <section className="header d-flex align-items-center px-3">
-        <Container>
-            <Row className="justify-content-center">
-                <h1>Encontre seu mentor</h1>
-                <InputGroup className="input py-3" size="lg">
-                    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Nome, Skill, Assunto"/>
-                </InputGroup>
-            </Row>
-        </Container>
-    </section>
-);
-
-export default Header;
+export default Header
