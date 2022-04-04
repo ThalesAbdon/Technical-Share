@@ -11,12 +11,13 @@ const Profile = () => (
         <Card>
         <Card.Body>
             <img src={imgEx}/>
-            <h2>Arthur Andradee</h2>
-            <Card.Text>
-                <h5>UX Research</h5>
-                <h5>SCRUM</h5>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
+            <h6>Analu</h6>
+            <h6>Front-end developer</h6>
+            <div className="d-flex justify-content-end">
+            <button className="btn-perfil">Ver perfil</button>
+            </div>
+            <Card.Text className="mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Etiam erat velit scelerisque in dictum.  Laoreet id donec ultrices tincidunt arcu non sodales neque.
             </Card.Text>
         </Card.Body>
         </Card>
@@ -28,12 +29,13 @@ const Profile = () => (
         <Card>
         <Card.Body>
             <img src={imgEx}/>
-            <h2>Arthur Andradee</h2>
-            <Card.Text>
-                <h5>UX Research</h5>
-                <h5>SCRUM</h5>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
+            <h6>Analu</h6>
+            <h6>Front-end developer</h6>
+            <div className="d-flex justify-content-end">
+            <button className="btn-perfil">Ver perfil</button>
+            </div>
+            <Card.Text className="mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Etiam erat velit scelerisque in dictum.  Laoreet id donec ultrices tincidunt arcu non sodales neque.
             </Card.Text>
         </Card.Body>
         </Card>

@@ -1,5 +1,5 @@
 .header {
-    height: 400px;
+    height: 250px;
     background-color:#36357E;
 }
 
@@ -7,11 +7,10 @@
     font-family: 'Montserrat';
     font-size: 3rem;
     color: #fff;
+    text-align: center;
 }
 
-.filtros {
-    width: 1000px;
-    height: 60px;
-    color: grey;
-    border-radius:20px;
+.input {
+    max-width: 616px;
 }
+
