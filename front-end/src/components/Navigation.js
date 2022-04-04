@@ -9,7 +9,7 @@ const Header = () => (
         <Navbar.Brand href="#home">Technical Share</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto align-menu">
+            <Nav className="justify-content-end">
             <Nav.Link href="#features">Home</Nav.Link>
             <Nav.Link href="#pricing">Sobre a TechShare</Nav.Link>
             <NavDropdown title="Login" id="collasible-nav-dropdown">

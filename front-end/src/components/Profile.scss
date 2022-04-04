@@ -3,7 +3,11 @@
 }
 
 img {
-    max-width:fit-content;
+    width:130px;
+    height: 130px;
+    border-radius: 100%;
+    float:left;
+    margin-right: 10px;
 }
 
 .color-primary {
@@ -17,4 +21,21 @@ img {
 
 .btn:hover {
     background-color:#2c2165;
+}
+
+.available {
+    background-color: green;
+    height: 30px;
+    padding: 3px 5px;
+    text-align: center;
+    color: #fff;
+}
+
+.schedule {
+    background-color: grey;
+    height: 50px;
+    border-radius: 0px 0px 20px 20px;
+    padding: 3px 5px;
+    text-align: center;
+    color: #fff;
 }
