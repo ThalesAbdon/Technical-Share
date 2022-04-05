@@ -2,6 +2,7 @@ const horarioModel = require("../models/Horarios");
 const UserModel = require("../models/User");
 
 class User {
+  
   async create(req, res) {
     const { name, work, seniority, skills, bio } = req.body;
     await UserModel.create({ name, work, seniority, skills, bio });
