@@ -1,3 +1,4 @@
+const horarioModel = require("../models/Horarios");
 const UserModel = require("../models/User");
 
 class User {
@@ -14,7 +15,7 @@ class User {
 
   async update(req, res) {
     if (req.file) {
-      const avatar = `http://localhost:4000/files/images/${req.file.filename}`;
+      const avatar = `http://localhost:${process.env.Port}/files/images/${req.file.filename}`;
       console.log(avatar);
       await UserModel.findByIdAndUpdate(
         { _id: req.params.id },
@@ -35,7 +36,9 @@ class User {
   }
 
   async delete(req, res) {
-    await UserModel.findByIdAndDelete({ _id: req.params.id });
+     await horarioModel.findOneAndDelete({user:{_id: req.params.id}});
+     await UserModel.findByIdAndDelete({ _id: req.params.id });
+    
     return res.status(200).json({ message: "Usuário Deletado!" });
   }
 
@@ -44,6 +47,29 @@ class User {
     console.log(req.query)
     return res.status(200).json(user)
   }
+   
+  async agendar(req,res){
+    try{
+    const horariomarcado = await horarioModel.create({
+      horario: req.body.horario, 
+      user: req.params.id
+    })
+    return res.status(200).json({message: "Horário marcado!"})
+    }catch(error){
+      return res.json({message: "Horário já Agendado!"})
+    }
+  }
+  
+  async listarAgenda(req,res){
+    const horarios = await horarioModel.find().populate('user')
+    return res.status(200).json(horarios)
+  }
+
+  async cancelarHorario(req,res){
+    await horarioModel.findByIdAndDelete({ _id: req.params.id });
+    return res.status(200).json({ message: "Horário Cancelado!" });
+  }
+
 }
 
 module.exports = new User();
