@@ -1,19 +1,13 @@
+import React from 'react';
+import Mentors from './views/findMentors';
 import './App.scss';
-import Navigation from './components/Navigation';
-import Profile from './components/Profile';
-import Header from './components/Header';
-import Filters from './components/Filters';
 
-function App() {
+const App = () => {
   return (
-    <div className='App'>
-
-		<Navigation/> 
-		<Header />
-		<Filters/>
-		<Profile/>
-    </div>
-  );
+    <>
+      <Mentors />
+    </>
+    );
 }
 
 export default App;
