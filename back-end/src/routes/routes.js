@@ -22,7 +22,10 @@ router.get('/api/listarAgenda/:id',User.listarAgenda)
 router.put('/api/update/:id',multer.single('avatar'),User.update)
 
 //DELETE
+//delete para deletar um usuário
 router.delete('/api/delete/:id',User.delete)
+//delete para deletar um horário marcado na agenda(cancelar)
+router.delete('/api/cancelarHorario/:id',User.cancelarHorario)
 
 
 module.exports = router

@@ -36,7 +36,9 @@ class User {
   }
 
   async delete(req, res) {
-    await UserModel.findByIdAndDelete({ _id: req.params.id });
+     await horarioModel.findOneAndDelete({user:{_id: req.params.id}});
+     await UserModel.findByIdAndDelete({ _id: req.params.id });
+    
     return res.status(200).json({ message: "Usuário Deletado!" });
   }
 
@@ -61,6 +63,11 @@ class User {
   async listarAgenda(req,res){
     const horarios = await horarioModel.find().populate('user')
     return res.status(200).json(horarios)
+  }
+
+  async cancelarHorario(req,res){
+    await horarioModel.findByIdAndDelete({ _id: req.params.id });
+    return res.status(200).json({ message: "Horário Cancelado!" });
   }
 
 }

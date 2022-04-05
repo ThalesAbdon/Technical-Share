@@ -4,13 +4,14 @@ const mongoose = require ("../database/database");
 
 const horarioSchema = new mongoose.Schema({
     horario:{
-        type: [String],
+        type: String,
         unique: true,
     },
     //Fazendo relacionamento com model User 
     user:{
        type: mongoose.Schema.Types.ObjectId,
-       ref:'User'
+       ref:'User',
+       required: true,
     }
 
 },{
