@@ -1,3 +1,4 @@
+const horarioModel = require("../models/Horarios");
 const UserModel = require("../models/User");
 
 class User {
@@ -44,6 +45,20 @@ class User {
     console.log(req.query)
     return res.status(200).json(user)
   }
+   
+  async agendar(req,res){
+    const horariomarcado = await horarioModel.create({
+      horario: req.body.horario, 
+      user: req.params.id
+    })
+    return res.status(200).json({message: "Horário marcado!"})
+  }
+  
+  async listarAgenda(req,res){
+    const horarios = await horarioModel.find().populate('user')
+    return res.status(200).json(horarios)
+  }
+
 }
 
 module.exports = new User();

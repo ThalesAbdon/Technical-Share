@@ -33,7 +33,9 @@ bio:{
     type: String,
     allowNull: false,
     required: true
-}
+},
+
+
 },{timestamps:true}
 )
 const UserModel = mongoose.model('User',UserSchema)
