@@ -15,7 +15,7 @@ class User {
 
   async update(req, res) {
     if (req.file) {
-      const avatar = `http://localhost:4000/files/images/${req.file.filename}`;
+      const avatar = `http://localhost:${process.env.Port}/files/images/${req.file.filename}`;
       console.log(avatar);
       await UserModel.findByIdAndUpdate(
         { _id: req.params.id },
