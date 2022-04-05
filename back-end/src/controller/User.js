@@ -47,11 +47,15 @@ class User {
   }
    
   async agendar(req,res){
+    try{
     const horariomarcado = await horarioModel.create({
       horario: req.body.horario, 
       user: req.params.id
     })
     return res.status(200).json({message: "Horário marcado!"})
+    }catch(error){
+      return res.json({message: "Horário já Agendado!"})
+    }
   }
   
   async listarAgenda(req,res){
