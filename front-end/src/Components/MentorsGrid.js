@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import './Profile.scss';
+import './MentorsGrid.scss';
 import {Card, Button, Container, Row, Col} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import api from '../services/api';
 
 
-export default function Profile() {
+export default function MentorsGrid() {
   const [perfis, setPerfis] = useState([]);
   useEffect(() => {
     api.get("/api/get/")
@@ -26,7 +27,7 @@ export default function Profile() {
     <h6>{mentor.name}</h6>
     <h6>{mentor.work} | {mentor.seniority}</h6>
     <div className="d-flex justify-content-end">
-    <button className="btn-perfil">Ver perfil</button>
+    <button className="btn-perfil"><Link to="/profile">Ver Perfil</Link></button>
     </div>
     <Card.Text className="mt-4">{mentor.bio}</Card.Text>
     <div className="skills">

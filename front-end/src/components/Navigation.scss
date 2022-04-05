@@ -1,4 +1,16 @@
-.color-primary {
-    background-color: #36357E;
-    color:#fff;
+.navbar {
+    text-transform: lowercase;
+    
+    a {
+        color: unset;
+        text-decoration: unset;
+    }
+
+    .color-primary {
+        background-color: #36357E;
+        color:#fff;
+    }
 }
+
+
+

@@ -1,14 +1,12 @@
 import React from 'react';
-import Navigation from '../Components/Navigation';
-import Profile from '../Components/Profile';
-import Header from '../Components/Header';
-import Filters from '../Components/Filters';
+import Profile from '../components/MentorsGrid';
+import Header from '../components/Header';
+import Filters from '../components/Filters';
 
 const findMentors = () => (
     <>
-        <Navigation/> 
         <Header />
-        <Filters/>
+        {/* <Filters/> */}
         <Profile/>
     </>
 );
