@@ -1,7 +1,7 @@
 import React from 'react';
 import Profile from '../components/MentorsGrid';
 import Header from '../components/Header';
-/*import Filters from '../components/Filters';*/
+import Filters from '../components/Filters';
 
 const findMentors = () => (
     <>

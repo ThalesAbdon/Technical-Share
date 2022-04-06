@@ -9,7 +9,7 @@ class User {
       await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis});
     return res.status(201).json({ message: "Usuário criado!" });
     }
-    return res.status(400).json({message: "Você precisa definir horários disponivéaaaaaais!"});
+    return res.status(400).json({message: "Você precisa definir horários disponivéis!"})
   }
 
   async get(req, res) {
