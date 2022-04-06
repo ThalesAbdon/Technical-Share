@@ -49,9 +49,7 @@ export default function MentorsGrid() {
     <Card.Text className="mt-5 pt-3">{mentor.bio}</Card.Text>
     <div className="skills">
         <ul>
-            <li className="skills-item">UX Designer</li>
-            <li className="skills-item">Back-end Java</li>
-            <li className="skills-item">Front-end Angular</li>
+            <li className="skills-item">{mentor.skills}</li>
         </ul>
     </div>
     </Card.Body>
@@ -129,6 +127,8 @@ export default function MentorsGrid() {
               <Calendar 
                 value={dateState}
                 onChange={changeDate}
+                //minDate para não marcar mentorias nos dias anteriores ao dia atual.
+                minDate = {new Date()}
                 
                 />
               
