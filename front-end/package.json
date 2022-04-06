@@ -19,6 +19,7 @@
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
     "sass": "^1.49.11",
+    "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -29,8 +30,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
