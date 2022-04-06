@@ -28,6 +28,7 @@ img {
 
 .btn {
     border:unset;
+    border-radius: 50px !important;
 }
 
 .btn:hover {
@@ -75,6 +76,28 @@ img {
 }
 
 ul,li {
-    padding:unset;
+    padding:unset !important;
     list-style-type: none;
+}
+
+.btn-agendamento {
+    background-color: #36357E !important;
+    color:#fff;
+    margin-top:-20px;
+    margin-right: -20px;
+    float: right;
+    border:unset !important;
+    border-radius: 50px !important;
+}
+
+.btn-horas {
+    margin:5px 2px 0px 0px;
+}
+
+.agendar {
+    width: 100%;
+}
+
+.box-horas {
+    padding:0px 10px;
 }
