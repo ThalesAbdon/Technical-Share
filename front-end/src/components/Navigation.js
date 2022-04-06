@@ -13,7 +13,7 @@ const Header = () => (
             <Nav className="justify-content-end">
             <Nav.Link><Link to="/buscar">Encontrar mentor</Link></Nav.Link>
             <Nav.Link><Link to="/buscar">Sobre</Link></Nav.Link>
-            <Nav.Link><Link to="/buscar">Login</Link></Nav.Link>
+            <Nav.Link><Link to="/login">Login</Link></Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Container>

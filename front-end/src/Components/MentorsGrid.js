@@ -40,7 +40,6 @@ export default function MentorsGrid() {
     </Card.Body>
     </Card>
     
-    <div className="available">Estou disponível!</div>
     <div className="schedule">
         <Row className="d-flex align-items-center">
         <ul>
