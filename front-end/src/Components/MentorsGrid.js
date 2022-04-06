@@ -3,40 +3,13 @@ import './MentorsGrid.scss';
 import {Card, Button, Container, Row, Col, Modal} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import api from '../services/api';
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css';
+import moment from 'moment';
 
 export default function MentorsGrid() {
 
   const [profile, setProfile] = React.useState(false);
-
-  function MyVerticallyCenteredModal(props) {
-    return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            {profile.name}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
-          <p>{profile._id}</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-
   const [modalShow, setModalShow] = React.useState(false);
 
   const [perfis, setPerfis] = useState([]);
@@ -50,20 +23,27 @@ export default function MentorsGrid() {
       });
   }, []);
 
-  function modalProfile(obj){
-    setProfile(obj)
-    setModalShow(true)
+  const [dateState, setDateState] = useState(new Date())
+  const changeDate = (e) => {
+    setDateState(e)
   }
 
-  const mentores = 
-    perfis.map(mentor => (
+  const [hour, setHour] = React.useState(false);
+
+  function hourClick(h){
+    setHour(h)
+  }
+
+  const data = moment(dateState).format('DD/MM/YYYY');
+
+  const mentors = perfis.map(mentor => (
     <Col xs={12} md={6} className="pb-3">
     <div className="mb-3">
     <Card>
     <Card.Body>
     <img src={mentor.avatar}/>
     <h6>{mentor.name}</h6>
-    <h6>{mentor.work} | {mentor.seniority}</h6>
+    <h6>{mentor.work} {mentor.seniority}</h6>
     <div className="d-flex justify-content-end">
     </div>
     <Card.Text className="mt-5 pt-3">{mentor.bio}</Card.Text>
@@ -100,10 +80,90 @@ export default function MentorsGrid() {
     </Col>
 ));
 
+  function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+          <Container className="d-flex align-items-center justify-content-center center">
+          <Row className="d-flex justify-content-center center">
+          <Col xs={12} md={6} className="pb-3">
+            <div className="mb-3">
+            <Card>
+              <Card.Body>
+                <img src={profile.avatar}/>
+                <h6>{profile.name}</h6>
+                <h6>{profile.work} {profile.seniority}</h6>
+                <div className="d-flex justify-content-end">
+                </div>
+                <Card.Text className="mt-5 pt-3">{profile.bio}</Card.Text>
+                <div className="skills">
+                  <h6><b>Hard Skills</b></h6>
+                    <ul>
+                        <li className="skills-item">UX Designer</li>
+                        <li className="skills-item">Back-end Java</li>
+                        <li className="skills-item">Front-end Angular</li>
+                    </ul>
+                    <h6><b>Soft Skills</b></h6>
+                    <ul>
+                        <li className="skills-item">Proativo</li>
+                        <li className="skills-item">Gosta de ensinar</li>
+                        <li className="skills-item">Comunicativo</li>
+                    </ul>
+                </div>
+              </Card.Body>
+            </Card>
+            </div>
+          </Col>
+          <Col xs={12} md={6} className="pb-3 justify-content-center">
+            <div className="mb-3">
+            <Card>
+              <Card.Body>
+                <center>
+              <Calendar 
+                value={dateState}
+                onChange={changeDate}
+                
+                />
+              
+              <div>
+                <Button className="btn-horas" onClick={() => hourClick("08:30")}>08:30</Button>
+                <Button className="btn-horas" onClick={() => hourClick("09:00")}>09:00</Button>
+                <Button className="btn-horas" onClick={() => hourClick("10:00")}>10:00</Button>
+                <Button className="btn-horas" onClick={() => hourClick("11:00")}>11:00</Button>
+                <Button className="btn-horas" onClick={() => hourClick("14:00")}>14:00</Button>
+                <Button className="btn-horas" onClick={() => hourClick("15:00")}>15:00</Button>
+                <Button className="btn-horas" onClick={() => hourClick("16:00")}>16:00</Button>
+                <Button className="btn-horas" onClick={() => hourClick("17:00")}>17:00</Button>
+                <Button className="agendar mt-2">Agendar dia {data} às {hour}</Button>
+              </div>
+              </center>
+              </Card.Body>
+            </Card>
+            </div>
+          </Col>
+          </Row>
+          </Container>
+        </Modal.Body>
+      </Modal>
+    );
+  }
+
+  function modalProfile(obj){
+    setProfile(obj)
+    setModalShow(true)
+  }
+
   return (
     <Container className="px-5 py-3">
         <Row className="d-flex align-items-center justify-content-center pt-3">
-            {mentores}
+            {mentors}
             
         </Row>
     </Container>

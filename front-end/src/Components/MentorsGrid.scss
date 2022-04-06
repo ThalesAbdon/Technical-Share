@@ -76,7 +76,7 @@ img {
 }
 
 ul,li {
-    padding:unset;
+    padding:unset !important;
     list-style-type: none;
 }
 
@@ -88,4 +88,16 @@ ul,li {
     float: right;
     border:unset !important;
     border-radius: 50px !important;
+}
+
+.btn-horas {
+    margin:5px 2px 0px 0px;
+}
+
+.agendar {
+    width: 100%;
+}
+
+.box-horas {
+    padding:0px 10px;
 }
