@@ -28,6 +28,7 @@ img {
 
 .btn {
     border:unset;
+    border-radius: 50px !important;
 }
 
 .btn:hover {
@@ -77,4 +78,14 @@ img {
 ul,li {
     padding:unset;
     list-style-type: none;
+}
+
+.btn-agendamento {
+    background-color: #36357E !important;
+    color:#fff;
+    margin-top:-20px;
+    margin-right: -20px;
+    float: right;
+    border:unset !important;
+    border-radius: 50px !important;
 }
