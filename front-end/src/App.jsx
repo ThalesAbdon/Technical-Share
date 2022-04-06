@@ -1,15 +1,21 @@
 import React from "react"
-import Body from "./components/Body"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Cadastro from "./pages/cadastro"
+import Home from "./pages/home/"
+import Oferecendo from "./pages/oferecendo"
 
 function App() {
     return (
-        <React.Fragment>
-            <Header />
-            <Body />
-            <Footer />
-        </React.Fragment>
+        <BrowserRouter>
+            <>
+                <Routes>
+                    <Route exact path="/" element={<Home />} />
+                    <Route exact path="/cadastro" element={<Cadastro />} />
+                    <Route exact path="/oferecendo" element={<Oferecendo />} />
+                </Routes>
+
+            </>
+        </BrowserRouter>
     )
 }
 export default App

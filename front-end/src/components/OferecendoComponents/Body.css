@@ -1,0 +1,119 @@
+.titulo {
+    display: flex;
+    align-items: center;
+    font-family: 'Metropolis Black', sans-serif;
+    font-size: 40px;
+    margin-left: 50px;
+
+} 
+.title-h1 {
+    color: #36357E;
+
+}
+.quadrado {
+    background-color: #36357E;
+    font-family: 'Metropolis Black', sans-serif;
+    height: 100px;
+    margin: auto;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quadrado p {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+}
+.paragrafo {
+    color: #36357E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 34%;
+    padding: 8px;
+    font-size: 32px;
+}
+
+.agendaContainer {
+    display: flex;
+    width: 48%;
+    align-items: center;
+    justify-content: center;
+    background-color: #36357E;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+
+.numerosContainer {
+    width: 100%;
+    padding: 16px;
+    margin: 8px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+
+.mes {
+    padding: 0px 48px;
+    margin-top: 16px;
+    background-color: white;
+    color: #36357E;
+    font-size: 48px;
+    border-radius: 999px;
+
+}
+
+.numerosContainer > p {
+    font-size: 56px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 999px;
+    
+}
+.paragrafo-two {
+    color: #36357E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin-right: 34%;
+}
+.horariosContainer {
+    width: 50%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    margin: 8px auto;
+}
+.horariosContainer > p {
+    font-size: 40px;
+    padding: 40px;
+    background-color: #36357E;
+    border-radius: 999px;
+    color: white;
+}
+.oferecer {
+    font-size: 40px;
+    padding: 40px;
+    background-color: #36357E;
+    border-radius: 999px;
+    color: white;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+
+}

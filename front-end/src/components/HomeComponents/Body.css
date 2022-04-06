@@ -1,6 +1,6 @@
 .titulo {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     margin-top: 130px;
     flex-direction: column;
     font-family: 'Metropolis Black', sans-serif;
@@ -11,14 +11,6 @@
 .content-container {
     display: flex;
     justify-content: space-between;
-}
-.imagem {
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    margin-top: 80px;
-    margin-right: 30px;
-    object-fit: cover;
 }
 
 .destaque {
@@ -36,11 +28,17 @@
 .botao {
     font-size: 40px;
     margin-left: 50px;
-    border-radius: 24px;
-    padding: 32px;
+    border-radius: 50px;
     border: none;
     background-color: #3e3576;
     cursor: pointer;
-    margin-top: -50px;
+    margin-top: 50px;
     color: white;
+    display: flex;
+    align-items: flex-end;
+}
+.title-h1 {
+    display: flex;
+    align-items: center;
+    
 }

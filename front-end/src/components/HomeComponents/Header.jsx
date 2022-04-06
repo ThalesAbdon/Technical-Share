@@ -9,7 +9,7 @@ function Header() {
                 <nav className="nav-bar">
                     <a href="a">Home</a>
                     <a href="a">Sobre a TechShare</a>
-                    <a href="a">Login</a>
+                    <a href="a">Cadastro</a>
                 </nav>
             </header>
 
