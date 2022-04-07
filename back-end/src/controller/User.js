@@ -4,9 +4,9 @@ const UserModel = require("../models/User");
 class User {
   
   async create(req, res) {
-    const { name, work, seniority, skills, bio,horariosDisponiveis } = req.body;
+    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha } = req.body;
     if(horariosDisponiveis){
-      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis});
+      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha});
     return res.status(201).json({ message: "Usuário criado!" });
     }
     return res.status(400).json({message: "Você precisa definir horários disponivéis!"})

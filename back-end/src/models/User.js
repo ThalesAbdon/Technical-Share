@@ -39,6 +39,17 @@ horariosDisponiveis:{
     required: true,
     allowNull: false,
 },
+email:{
+    type: String,
+    allowNull: false,
+    unique: true,
+    required: true, 
+},
+senha:{
+    type: String,
+    allowNull: false,
+    required: true, 
+},
 
 },{timestamps:true}
 )
