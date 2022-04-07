@@ -4,7 +4,7 @@ const io = require('socket.io')(server, {cors: {origin:'http://localhost:3000'}}
 const cors = require('cors')
 app.use
 io.on("connect", (socket) => {
-	console.log("New user connected!");
+	//console.log("New user connected!");
 	let nameSocket;
 
 	socket.on("userConnected", (name) => {

@@ -64,11 +64,23 @@ class User {
     }
   }
   
+
+  async listarAgendaUser(req,res){
+    try{
+    const horarios = await horarioModel.find({user: req.params.id}).populate('user')
+    return res.status(200).json(horarios)
+    } catch(error){
+      return res.status(200).json([])
+    }
+  }
+
+
   //ajeitar para listar apenas um user
-  async listarAgenda(req,res){
+  async listarTodosOsHorarios(req,res){
     const horarios = await horarioModel.find().populate('user')
     return res.status(200).json(horarios)
   }
+
 
   async cancelarHorario(req,res){
     await horarioModel.findByIdAndDelete({ _id: req.params.id });
