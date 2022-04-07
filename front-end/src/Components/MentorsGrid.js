@@ -42,7 +42,7 @@ export default function MentorsGrid() {
   //variavel que guarda o mês atual 
   var month = new Date().getMonth()
   //variavel que guarda o dia atual e soma + 7 dias para assim sempre ser disponivel marcar mentoria no periodo de 1 semana 
-  var day = Number( String(new Date(). getDate()). padStart(2,'0')) + 7
+  var day = Number( String(new Date(). getDate()). padStart(2,'0')) + 30
 
   
   const mentors = perfis.map(mentor => (
