@@ -64,6 +64,7 @@ class User {
     }
   }
   
+  //ajeitar para listar apenas um user
   async listarAgenda(req,res){
     const horarios = await horarioModel.find().populate('user')
     return res.status(200).json(horarios)

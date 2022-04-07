@@ -38,8 +38,7 @@ horariosDisponiveis:{
     type: [String],
     required: true,
     allowNull: false,
-}
-
+},
 
 },{timestamps:true}
 )

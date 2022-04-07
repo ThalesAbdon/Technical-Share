@@ -12,7 +12,6 @@ import swal from 'sweetalert';
 export default function MentorsGrid() {
 
 
-
   const [profile, setProfile] = React.useState(false);
   const [modalShow, setModalShow] = React.useState(false);
 
@@ -27,22 +26,13 @@ export default function MentorsGrid() {
       });
   }, []);
 
-  function scheduled(){ 
-    return
-      <Modal.Dialog>
-      <Modal.Header>
-        <Modal.Title>Horário agendado!</Modal.Title>
-        <Button variant="secondary">Close</Button>
-      </Modal.Header>
-    </Modal.Dialog>
-
-  
+ 
     const handleSubmit = (e) => {
       e.preventDefault();
       const userData = {
         horario: completedata
       };
-      axios.post("http://localhost:5000/api/agendar/624b603f0edf0a23cb47e313", userData).then((response) => {
+      axios.post("http://localhost:5000/api/agendar/624e23d1629b48732cbedd2d", userData).then((response) => {
         console.log(response.status);
       });
       swal({
@@ -205,4 +195,4 @@ export default function MentorsGrid() {
         </Row>
     </Container>
   )
-  }}
+  }

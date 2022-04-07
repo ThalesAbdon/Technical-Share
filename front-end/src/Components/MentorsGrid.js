@@ -59,6 +59,7 @@ export default function MentorsGrid() {
     <div className="skills">
         <ul>
             <li className="skills-item">{mentor.skills}</li>
+
         </ul>
     </div>
     </Card.Body>
