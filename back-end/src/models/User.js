@@ -33,7 +33,12 @@ bio:{
     type: String,
     allowNull: false,
     required: true
-},
+}, 
+horariosDisponiveis:{
+    type: [String],
+    required: true,
+    allowNull: false,
+}
 
 
 },{timestamps:true}

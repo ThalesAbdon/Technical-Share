@@ -27,6 +27,8 @@ export default function MentorsGrid() {
   const changeDate = (e) => {
     setDateState(e)
   }
+  
+  
 
   const [hour, setHour] = React.useState(false);
 
@@ -35,7 +37,14 @@ export default function MentorsGrid() {
   }
 
   const data = moment(dateState).format('DD/MM/YYYY');
+  
+  var year = new Date().getFullYear()
+  //variavel que guarda o mês atual 
+  var month = new Date().getMonth()
+  //variavel que guarda o dia atual e soma + 7 dias para assim sempre ser disponivel marcar mentoria no periodo de 1 semana 
+  var day = Number( String(new Date(). getDate()). padStart(2,'0')) + 30
 
+  
   const mentors = perfis.map(mentor => (
     <Col xs={12} md={6} className="pb-3">
     <div className="mb-3">
@@ -49,9 +58,7 @@ export default function MentorsGrid() {
     <Card.Text className="mt-5 pt-3">{mentor.bio}</Card.Text>
     <div className="skills">
         <ul>
-            <li className="skills-item">UX Designer</li>
-            <li className="skills-item">Back-end Java</li>
-            <li className="skills-item">Front-end Angular</li>
+            <li className="skills-item">{mentor.skills}</li>
         </ul>
     </div>
     </Card.Body>
@@ -129,6 +136,9 @@ export default function MentorsGrid() {
               <Calendar 
                 value={dateState}
                 onChange={changeDate}
+                //minDate para não marcar mentorias nos dias anteriores ao dia atual.
+                minDate = {new Date()}
+                maxDate = {new Date(year, month, day)}
                 
                 />
               

@@ -2,10 +2,14 @@ const horarioModel = require("../models/Horarios");
 const UserModel = require("../models/User");
 
 class User {
+  
   async create(req, res) {
-    const { name, work, seniority, skills, bio } = req.body;
-    await UserModel.create({ name, work, seniority, skills, bio });
+    const { name, work, seniority, skills, bio,horariosDisponiveis } = req.body;
+    if(horariosDisponiveis){
+      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis});
     return res.status(201).json({ message: "Usuário criado!" });
+    }
+    return res.status(400).json({message: "Você precisa definir horários disponivéis!"})
   }
 
   async get(req, res) {
