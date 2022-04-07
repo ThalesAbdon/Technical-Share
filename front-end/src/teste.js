@@ -32,7 +32,7 @@ export default function MentorsGrid() {
       const userData = {
         horario: completedata
       };
-      axios.post("http://localhost:5000/api/agendar/624e23d1629b48732cbedd2d", userData).then((response) => {
+      api.post("/api/agendar/624e23d1629b48732cbedd2d", userData).then((response) => {
         console.log(response.status);
       });
       swal({
