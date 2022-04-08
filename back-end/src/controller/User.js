@@ -1,19 +1,38 @@
 const horarioModel = require("../models/Horarios");
 const UserModel = require("../models/User");
-
+const bcrypt = require("bcrypt");
+const { where } = require("../models/Horarios");
+const generateToken = require("../authentication/jsonwebtoken");
 class User {
   
   async create(req, res) {
-    const { name, work, seniority, skills, bio,horariosDisponiveis } = req.body;
+    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha} = req.body;
+    const hash = bcrypt.hashSync(senha,10)
     if(horariosDisponiveis){
-      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis});
+      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha:hash});
     return res.status(201).json({ message: "Usuário criado!" });
     }
     return res.status(400).json({message: "Você precisa definir horários disponivéis!"})
   }
+  
+
+  async login(req,res){
+    const {email,senha} = req.body;
+    const data = await UserModel.findOne({email})
+    if(!data){
+      return res.status(400).json({message: "Email Incorreto!!"})
+    }
+    const verify = await bcrypt.compare(senha,data.senha) 
+    if(verify){
+      const token = generateToken.generate({id:data._id}) 
+      return res.status(200).json({token})
+    }else{
+      return res.status(400).json("message: Wrong Password!")
+    }
+  }
 
   async get(req, res) {
-    const user = await UserModel.find();
+    const user = await UserModel.find().select("-senha");
     return res.status(200).json({ user });
   }
 
@@ -64,10 +83,23 @@ class User {
     }
   }
   
-  async listarAgenda(req,res){
+
+  async listarAgendaUser(req,res){
+    try{
+    const horarios = await horarioModel.find({user: req.params.id}).populate('user')
+    return res.status(200).json(horarios)
+    } catch(error){
+      return res.status(200).json([])
+    }
+  }
+
+
+  //ajeitar para listar apenas um user
+  async listarTodosOsHorarios(req,res){
     const horarios = await horarioModel.find().populate('user')
     return res.status(200).json(horarios)
   }
+
 
   async cancelarHorario(req,res){
     await horarioModel.findByIdAndDelete({ _id: req.params.id });
