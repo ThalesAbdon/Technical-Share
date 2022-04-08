@@ -26,7 +26,7 @@ export default function MentorsGrid() {
       });
   }, []);
 
- 
+
     const handleSubmit = (e) => {
       e.preventDefault();
       const userData = {

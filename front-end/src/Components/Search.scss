@@ -1,0 +1,36 @@
+section {
+    margin-top: 40px;
+    font-family: 'Montserrat';
+
+    h1 {
+        font-size: 35px;
+        color: #fff;
+        text-align: center;
+        font-weight: 700;
+
+        b {
+            color:#EA3800;
+        }
+    }
+
+    h2 {
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+
+        b {
+            color:#EA3800;
+        }
+    }
+
+    .input {
+        max-width: 532px;
+    }
+
+    input::placeholder {
+        font-family: 'Montserrat';
+        font-size: 14px;
+        text-align: center;
+    }
+}
