@@ -23,9 +23,6 @@ router.get('/api/listarAgendaUser/:id',User.listarAgendaUser)
 router.get('/api/listarTodosOsHorarios/:id',User.listarTodosOsHorarios)
 
 
-
-
-
 //PUT
 // put que atualiza a foto do avatar e do dados do usuário
 router.put('/api/update/:id',auth.authenticate,multer.single('avatar'),User.update)

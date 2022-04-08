@@ -167,7 +167,7 @@ export default function MentorsGrid() {
                           {profile ?
                            profile.horariosDisponiveis.map((index) => {return (<Button className="btn-horas"  onClick={() => hourClick(index)} > {index} </Button>);}) :
                            <Button> OI </Button>
-                        
+                            
                           }
                     
 
