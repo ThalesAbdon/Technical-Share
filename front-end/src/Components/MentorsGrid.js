@@ -10,6 +10,7 @@ import moment from "moment";
 export default function MentorsGrid() {
   const [profile, setProfile] = React.useState(false);
   const [modalShow, setModalShow] = React.useState(false);
+ // const [mentorId, setMentorId] = React.useState(Object);
 
   const [perfis, setPerfis] = useState([]);
   useEffect(() => {
@@ -123,9 +124,10 @@ export default function MentorsGrid() {
                           <b>Hard Skills</b>
                         </h6>
                         <ul>
-                          <li className="skills-item">UX Designer</li>
-                          <li className="skills-item">Back-end Java</li>
-                          <li className="skills-item">Front-end Angular</li>
+                          {console.log(profile.lenght)}
+                        {profile ?   profile.skills.map((index) => {
+                                              return (<li className="skills-item" key={profile._id}> {index} </li>);}): <li> OI</li>}
+                      
                         </ul>
                         <h6>
                           <b>Soft Skills</b>
