@@ -1,7 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
-//const io = require('../socketio/socketio.js')
 const path = require('path')
 const app = express()
 const router = require('../routes/routes.js')

@@ -26,7 +26,7 @@ avaliation:{
 
 },
 skills:{
-    type: String,
+    type: [String],
     required: true,
 },
 bio:{
