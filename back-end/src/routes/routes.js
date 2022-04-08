@@ -8,7 +8,7 @@ const auth = require('../authentication/auth')
 //post para criar um user
 router.post('/api/create',User.create)
 // post que adiciona um horário na agenda
-router.post('/api/agendar/:id',User.agendar)
+router.post('/api/agendar/:id',auth.authenticate,User.agendar)
 // post para login
 router.post('/api/login',User.login)
 
@@ -29,9 +29,9 @@ router.put('/api/update/:id',auth.authenticate,multer.single('avatar'),User.upda
 
 //DELETE
 //delete para deletar um usuário
-router.delete('/api/delete/:id',User.delete)
+router.delete('/api/delete/:id',auth.authenticate,User.delete)
 //delete para deletar um horário marcado na agenda(cancelar)
-router.delete('/api/cancelarHorario/:id',User.cancelarHorario)
+router.delete('/api/cancelarHorario/:id',auth.authenticate,User.cancelarHorario)
 
 
 module.exports = router
