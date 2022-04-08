@@ -6,6 +6,7 @@ import api from "../services/api";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import moment from "moment";
+import Auth from "../Auth/Auth";
 
 export default function MentorsGrid() {
   const [profile, setProfile] = React.useState(false);
@@ -123,11 +124,13 @@ export default function MentorsGrid() {
                         <h6>
                           <b>Hard Skills</b>
                         </h6>
+                        
                         <ul>
-            
+                
+                        {Auth()}
                         {profile ?   profile.skills.map((index) => {
                                               return (<li className="skills-item" key={profile._id}> {index} </li>);}): <li> OI</li>}
-                      
+                        
                         </ul>
                         <h6>
                           <b>Soft Skills</b>

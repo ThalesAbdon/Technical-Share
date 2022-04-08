@@ -2,16 +2,29 @@ import React, { useState } from 'react';
 import {Container,Form, Button, Row, Col} from 'react-bootstrap';
 import './Login.scss';
 import api from '../services/api'
+import { useNavigate } from 'react-router-dom';
 
 
 function Login(){
     const [email,setEmail] = useState('');
     const [senha,setSenha] = useState('');
-     
+    const history = useNavigate('');
     async function login(e){
         e.preventDefault(); 
-        const data = await api.post("/api/login/", {email,senha})
-        console.log(data.data)
+        try{
+            const data = await api.post("/api/login/", {email,senha})
+            console.log(data.status)
+            localStorage.setItem("token",data.data.token);
+            return history("/buscar")    
+        }catch(error){
+            alert("Email ou Senha incorretos!")
+        }
+        /*
+        if(data.status === 400){
+            alert(data.data.response)
+        }else{
+           
+        }*/
     }
 
 

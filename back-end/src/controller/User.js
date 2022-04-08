@@ -27,7 +27,7 @@ class User {
       const token = generateToken.generate({id:data._id}) 
       return res.status(200).json({token})
     }else{
-      return res.status(200).json("message: Wrong Password!")
+      return res.status(400).json("message: Wrong Password!")
     }
   }
 

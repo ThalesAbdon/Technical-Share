@@ -3,6 +3,7 @@ import Message from "../Message/Message";
 import "./Chat.css";
 import { Input } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
+import Auth from "../../Auth/Auth"
 
 export default function Chat({ socket }) {
 	const [message, setMessage] = useState("");
@@ -14,6 +15,10 @@ export default function Chat({ socket }) {
 		});
 	}, [socket]);
 
+	useEffect(() =>{
+    Auth()
+	},[])
+	 
 	const sendMessage = () => {
 		if (message.trim() === "") return;
 		socket.emit("message", { userId: socket.id, name: socket.name, message });
