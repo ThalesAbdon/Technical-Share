@@ -5,18 +5,17 @@ import api from '../services/api';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import moment from 'moment';
+import { Link } from "react-router-dom";
+import Auth from "../Auth/Auth";
 
 export default function MentorsGrid() {
 
   document.body.style = "background: transparent";
 
   //abre o modal
+  const [profile, setProfile] = React.useState(false);
   const [modalShow, setModalShow] = React.useState(false);
   console.log(modalShow);
-
-  //objeto com o perfil dentro do modal
-  const [profile, setProfile] = React.useState(false);
-  console.log(profile);
 
   //modal com o perfil e agenda do mentor
   function MyVerticallyCenteredModal(props) {
@@ -44,9 +43,9 @@ export default function MentorsGrid() {
                       <div className="skills">
                         <h6><b>Hard Skills</b></h6>
                           <ul>
-                              <li className="skills-item">UX Designer</li>
-                              <li className="skills-item">Back-end Java</li>
-                              <li className="skills-item">Front-end Angular</li>
+                          {Auth()}
+                        {profile ?   profile.skills.map((index) => {
+                                              return (<li className="skills-item" key={profile._id}> {index} </li>);}): <li> OI</li>}
                           </ul>
                       </div>
                     </Card.Body>
@@ -67,15 +66,11 @@ export default function MentorsGrid() {
                           />
                     
                           <div>
-                            <Button className="btn-horas" onClick={() => hourClick("08:30")}>08:30</Button>
-                            <Button className="btn-horas" onClick={() => hourClick("09:00")}>09:00</Button>
-                            <Button className="btn-horas" onClick={() => hourClick("10:00")}>10:00</Button>
-                            <Button className="btn-horas" onClick={() => hourClick("11:00")}>11:00</Button>
-                            <Button className="btn-horas" onClick={() => hourClick("14:00")}>14:00</Button>
-                            <Button className="btn-horas" onClick={() => hourClick("15:00")}>15:00</Button>
-                            <Button className="btn-horas" onClick={() => hourClick("16:00")}>16:00</Button>
-                            <Button className="btn-horas" onClick={() => hourClick("17:00")}>17:00</Button>
-                            <Button className="agendar mt-2">Agendar dia {data} às {hour}</Button>
+                          {profile ?
+                           profile.horariosDisponiveis.map((index) => {return (<Button className="btn-horas"  onClick={() => hourClick(index)} > {index} </Button>);}) :
+                           <Button> OI </Button>
+                            
+                          }
                           </div>
                       </center>
                     </Card.Body>
@@ -97,18 +92,22 @@ export default function MentorsGrid() {
   //perfis que são exibidos quando abre a tela
   const [perfis, setPerfis] = useState([]);
   useEffect(() => {
-    api.get("/api/get/")
-       .then((response) => {
-         setPerfis(response.data.user);
+    api
+      .get("/api/get/")
+      .then((response) => {
+        setPerfis(response.data.user);
       })
       .catch((err) => {
         console.error("ops! ocorreu um erro : " + err);
       });
   }, []);
 
+
   //cards que aparecem quando abre a tela
   const mentors = perfis.map(mentor => (
     <Col xs={12} md={5} className="pb-3 mx-4">
+
+
       <div className="mb-3">
         <Card>
           <Card.Body>
@@ -119,19 +118,23 @@ export default function MentorsGrid() {
             <Card.Text className="mt-4 pt-3">{mentor.bio}</Card.Text>
             <div className="skills">
               <ul>
-                  {/* <li>{mentor.skills}</li> */}
-                  <li>Scrum</li>
-                  <li>UX Designer</li>
-                  <li>UX Writing</li>
+              {mentor.skills.map((index) => {
+                  return (
+                    <li className="skills-item" key={mentor._id}>
+                      {index}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="availableTimes mt-4 mb-5">
               <h6 className="mb-3">Horários disponíveis hoje:</h6>
               <ul>
-                {/* <li>{mentor.skills}</li> */}
-                <li>09:30</li>
-                <li>11:40</li>
-                <li>14:20</li>
+              {mentor.horariosDisponiveis.map((index) => {
+                return (
+                  <li className="schedule-item" key={mentor._id}>{index}</li>   
+                );
+              })}
               </ul> 
             </div>
           </Card.Body>
@@ -179,4 +182,6 @@ export default function MentorsGrid() {
       </Container>
     </section>
   )
+
+
 }
