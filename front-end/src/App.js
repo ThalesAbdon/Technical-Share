@@ -6,12 +6,12 @@ import Login from './components/Login';
 import Teste from './teste.js';
 import './App.scss';
 
-import Navigation from './components/Navigation';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Navigation/>
+      <Navbar/>
       <Routes>
         <Route path="/buscar" element={<Mentors />}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -23,3 +23,4 @@ const App = () => {
 }
 
 export default App;
+

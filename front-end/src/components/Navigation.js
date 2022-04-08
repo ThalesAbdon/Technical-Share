@@ -2,7 +2,7 @@ import React from "react";
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import './Navigation.scss';
-import logo from '../resources/logo.svg'
+import logo from '../resources/logo_mentorange-14.svg'
 
 const Header = () => (
     <Navbar collapseOnSelect expand="lg" className="color-primary" variant="dark">

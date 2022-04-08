@@ -27,15 +27,6 @@ export default function MentorsGrid() {
       });
   }, []);
 
-  function scheduled(){ 
-    return
-      <Modal.Dialog>
-      <Modal.Header>
-        <Modal.Title>Horário agendado!</Modal.Title>
-        <Button variant="secondary">Close</Button>
-      </Modal.Header>
-    </Modal.Dialog>
-
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -205,4 +196,4 @@ export default function MentorsGrid() {
         </Row>
     </Container>
   )
-  }}
+  }

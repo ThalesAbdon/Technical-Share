@@ -44,9 +44,11 @@ export default function MentorsGrid() {
   //variavel que guarda o dia atual e soma + 7 dias para assim sempre ser disponivel marcar mentoria no periodo de 1 semana 
   var day = Number( String(new Date(). getDate()). padStart(2,'0')) + 30
 
+
+  document.body.style = "background: transparent";
   
   const mentors = perfis.map(mentor => (
-    <Col xs={12} md={6} className="pb-3">
+    <Col xs={12} md={5} className="pb-3 mx-4">
     <div className="mb-3">
     <Card>
     <Card.Body>
@@ -63,20 +65,13 @@ export default function MentorsGrid() {
     </div>
     </Card.Body>
     </Card>
+    <Row className="justify-content-end">
+
+      <Button variant="" onClick={() => modalProfile(mentor)}>
+        Saiba mais
+      </Button>
     
-    <div className="schedule">
-        <Row className="d-flex align-items-center">
-          <ul>
-              <li className="schedule-item">10:00</li>
-              <li className="schedule-item">11:00</li>
-              <li className="schedule-item">12:00</li>
-              <li className="schedule-item">13:00</li>
-          </ul>
-        </Row>
-    </div>
-    <Button variant="" className="btn-agendamento" onClick={() => modalProfile(mentor)}>
-      Saiba mais
-    </Button>
+    </Row>
   
     <MyVerticallyCenteredModal
       show={modalShow}
@@ -171,10 +166,13 @@ export default function MentorsGrid() {
   }
 
   return (
-    <Container className="px-5 py-3">
-        <Row className="d-flex align-items-center justify-content-center pt-3">
-            {mentors}
-            
-        </Row>
-    </Container>
+    <section>
+
+      <Container className="px-5 py-3">
+          <Row className="d-flex align-items-center justify-content-center pt-3">
+              {mentors}
+              
+          </Row>
+      </Container>
+    </section>
   )}
