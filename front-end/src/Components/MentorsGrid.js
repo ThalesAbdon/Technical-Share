@@ -124,7 +124,7 @@ export default function MentorsGrid() {
                           <b>Hard Skills</b>
                         </h6>
                         <ul>
-                          {console.log(profile.lenght)}
+            
                         {profile ?   profile.skills.map((index) => {
                                               return (<li className="skills-item" key={profile._id}> {index} </li>);}): <li> OI</li>}
                       
@@ -156,54 +156,23 @@ export default function MentorsGrid() {
                         />
 
                         <div>
-                          <Button
-                            className="btn-horas"
-                            onClick={() => hourClick("08:30")}
-                          >
-                            08:30
-                          </Button>
-                          <Button
-                            className="btn-horas"
-                            onClick={() => hourClick("09:00")}
-                          >
-                            09:00
-                          </Button>
-                          <Button
-                            className="btn-horas"
-                            onClick={() => hourClick("10:00")}
-                          >
-                            10:00
-                          </Button>
-                          <Button
-                            className="btn-horas"
-                            onClick={() => hourClick("11:00")}
-                          >
-                            11:00
-                          </Button>
-                          <Button
-                            className="btn-horas"
-                            onClick={() => hourClick("14:00")}
-                          >
-                            14:00
-                          </Button>
-                          <Button
-                            className="btn-horas"
-                            onClick={() => hourClick("15:00")}
-                          >
-                            15:00
-                          </Button>
-                          <Button
-                            className="btn-horas"
-                            onClick={() => hourClick("16:00")}
-                          >
-                            16:00
-                          </Button>
-                          <Button
-                            className="btn-horas"
-                            onClick={() => hourClick("17:00")}
-                          >
-                            17:00
-                          </Button>
+                        
+                          
+                          { /*
+                          {profile ?  
+                          <Button> OI </Button> :  
+                          profile.horariosDisponiveis.map((index) => {return (<Button className="btn-horas"  onClick={() => hourClick(index)} > {index} </Button>);})} */}
+                         
+                         
+                          {profile ?
+                           profile.horariosDisponiveis.map((index) => {return (<Button className="btn-horas"  onClick={() => hourClick(index)} > {index} </Button>);}) :
+                           <Button> OI </Button>
+                        
+                          }
+                    
+
+
+
                           <Button className="agendar mt-2">
                             Agendar dia {data} às {hour}
                           </Button>
