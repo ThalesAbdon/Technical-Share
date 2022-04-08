@@ -1,16 +1,35 @@
-.header {
-    height: 250px;
-    background-color:#36357E;
-}
-
-.header h1 {
+section {
+    margin-top: 40px;
     font-family: 'Montserrat';
-    font-size: 3rem;
-    color: #fff;
-    text-align: center;
-}
 
-.input {
-    max-width: 616px !important;
-}
+    h1 {
+        font-size: 35px;
+        color: #fff;
+        font-weight: 700;
 
+        b {
+            color:#EA3800;
+        }
+    }
+
+    h2 {
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+
+        b {
+            color:#EA3800;
+        }
+    }
+
+    .input {
+        max-width: 532px;
+    }
+
+    input::placeholder {
+        font-family: 'Montserrat';
+        font-size: 14px;
+        text-align: center;
+    }
+}

@@ -16,21 +16,23 @@ export default function Header (){
      }
     //})
 
-    return(  
-    <section className="header d-flex align-items-center px-3">
-        <Container>
-            <Row className="justify-content-center">
-                <h1>Encontre seu mentor</h1>
-                <InputGroup className="input py-3" size="lg">
-                    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Nome, Skill, Assunto" value={search}onChange = {e=>setSearch(e.target.value)}/>
-                </InputGroup>
-            </Row>
 
-             <button onClick={buscar}>
-                 Pesquisar
-             </button>
-        </Container>
-    </section>
+    return(  
+        <section className="d-flex px-3">
+            <Container>
+                <Row className="justify-content-center">
+                    <h1>Encontre um <b>mentor</b></h1>
+                    <InputGroup className="input py-3" size="sm">
+                        <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-md" placeholder="Digite aqui uma skill que você quer aprender" value={search}onChange = {e=>setSearch(e.target.value)}/>
+                    </InputGroup>
+                    <h2>Estes são os mentores com a <b>skill escolhida</b></h2>
+                </Row>
+
+                <button onClick={buscar}>
+                    Pesquisar
+                </button>
+            </Container>
+        </section>
     )  
 }
 
