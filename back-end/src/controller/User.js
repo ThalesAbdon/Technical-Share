@@ -1,6 +1,8 @@
 const horarioModel = require("../models/Horarios");
 const UserModel = require("../models/User");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+const { where } = require("../models/Horarios");
+const generateToken = require("../authentication/jsonwebtoken");
 class User {
   
   async create(req, res) {
@@ -11,6 +13,22 @@ class User {
     return res.status(201).json({ message: "Usuário criado!" });
     }
     return res.status(400).json({message: "Você precisa definir horários disponivéis!"})
+  }
+  
+
+  async login(req,res){
+    const {email,senha} = req.body;
+    const data = await UserModel.findOne({email})
+    if(!data){
+      return res.status(400).json({message: "Email Incorreto!!"})
+    }
+    const verify = await bcrypt.compare(senha,data.senha) 
+    if(verify){
+      const token = generateToken.generate({id:data._id}) 
+      return res.status(200).json({token})
+    }else{
+      return res.status(200).json("message: Wrong Password!")
+    }
   }
 
   async get(req, res) {

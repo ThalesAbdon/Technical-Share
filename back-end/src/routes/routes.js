@@ -2,12 +2,15 @@ const {Router} = require('express')
 const multer = require('../multer/multer')
 const router = Router()
 const User = require('../controller/User')
+const auth = require('../authentication/auth')
 
 //POST
 //post para criar um user
 router.post('/api/create',User.create)
 // post que adiciona um horário na agenda
 router.post('/api/agendar/:id',User.agendar)
+// post para login
+router.post('/api/login',User.login)
 
 // GET
 // get que lista os dados de um user já cadastrado no sistema
@@ -25,7 +28,7 @@ router.get('/api/listarTodosOsHorarios/:id',User.listarTodosOsHorarios)
 
 //PUT
 // put que atualiza a foto do avatar e do dados do usuário
-router.put('/api/update/:id',multer.single('avatar'),User.update)
+router.put('/api/update/:id',auth.authenticate,multer.single('avatar'),User.update)
 
 //DELETE
 //delete para deletar um usuário
