@@ -1,16 +1,43 @@
-.color-primary {
-    background-color: #36357E;
-    color:#fff;
-}
+section {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
 
-.box {
-    max-width: 600px !important;
-    background-color: #f0f0f0;
-    box-shadow: 1px 1px 1px #ccc;
-    padding: 45px!important;
-    border-radius: 10px;
-}
+    h1{
+        font-size: 50px;
+        font-weight: 800;
+        text-align: center;
 
-h1 {
-    text-align: center;
+        span {
+            color: #FE5517;
+        }
+    }
+
+    h5 {
+        font-size: 18px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    input.form-control {
+        max-width: 492px !important;
+    }
+
+    .btn-login {
+        width: 385px;
+        background-color: #FE3600;
+        font-size: 30px;
+        font-weight: 500;
+        color: #fff;
+        border-radius: 24px;
+        padding: unset;
+    }
+    
+    .box {
+        max-width: 600px !important;
+    }
+
+        .form-label {
+            font-size: 14px;
+            text-align: left !important;
+        }
 }

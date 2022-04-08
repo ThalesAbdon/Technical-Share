@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Burger from './Burger';
+import Burger from '../components/Burger';
 import Logo from '../resources/logo_mentorange-14.svg';
+import {Container} from 'react-bootstrap';
 
 
 const Nav = styled.nav`
@@ -12,7 +13,6 @@ const Nav = styled.nav`
   align-items:center;
   .logo {
     padding: 18px 0;
-    margin-right:20px;
   }
   ul{
       margin-top: 22px;
@@ -27,14 +27,15 @@ const Nav = styled.nav`
 
 const Navbar = () => {
   return (
-
-        <Nav>
-            <div className="logo">
-                <a href="/"><img src={Logo} width="260"/></a>
-            </div>
-            <Burger />
-        </Nav>
+    <Container>
+      <Nav>
+          <div className="logo">
+              <a href="/"><img src={Logo} width="260"/></a>
+          </div>
+          <Burger />
+      </Nav>
+    </Container>
   )
 }
 
-export default Navbar
+export default Navbar;
