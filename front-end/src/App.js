@@ -1,13 +1,12 @@
 import * as React from "react";
-
-import * as ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FindMentors from './views/SearchMentors';
 import TesteViews from './views/TesteView';
 import LoginPage from "./views/Login";
 import Navbar from './views/Navbar';
+import Chat from "./components/chat";
 import './App.scss';
-import Mensagem from "./components/chat";
+
 
 
 
@@ -18,10 +17,11 @@ const App = () => {
 
       <Navbar/>
       <Routes>
+       <Route path="/" element={<LoginPage />}/>
         <Route path="/buscar" element={<FindMentors/>}/>
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/teste" element={<TesteViews />}/>
-        <Route path="/chat" element={<Mensagem />}/>
+        <Route path="/chat" element={<Chat/>}/>
 
       </Routes>
 

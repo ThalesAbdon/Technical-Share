@@ -5,7 +5,6 @@ import api from '../services/api';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import moment from 'moment';
-import { Link } from "react-router-dom";
 import Auth from "../Auth/Auth";
 
 export default function MentorsGrid() {
@@ -34,7 +33,7 @@ export default function MentorsGrid() {
                 <div className="mb-3">
                   <Card>
                     <Card.Body>
-                      <img className="avatar" src={profile.avatar}/>
+                      <img className="avatar" alt=" " src={profile.avatar}/>
                       <h6>{profile.name}</h6>
                       <h6>{profile.work} {profile.seniority}</h6>
                       <div className="d-flex justify-content-end">
@@ -66,11 +65,15 @@ export default function MentorsGrid() {
                           />
                     
                           <div>
+                            <br/>
                           {profile ?
                            profile.horariosDisponiveis.map((index) => {return (<Button className="btn-horas"  onClick={() => hourClick(index)} > {index} </Button>);}) :
                            <Button> OI </Button>
-                            
+                          
                           }
+                          <div>
+                           <Button className="agendar mt-2">Agendar dia {data} às {hour}</Button>
+                           </div>
                           </div>
                       </center>
                     </Card.Body>
@@ -111,7 +114,7 @@ export default function MentorsGrid() {
       <div className="mb-3">
         <Card>
           <Card.Body>
-            <img className="avatar" src={mentor.avatar}/>
+            <img className="avatar" alt= " " src={mentor.avatar}/>
             <h6>{mentor.name}</h6>
             <h6>{mentor.work} {mentor.seniority}</h6>
             <div className="py-2"/>

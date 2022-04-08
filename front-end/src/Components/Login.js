@@ -13,7 +13,7 @@ function Login() {
     const [senha,setSenha] = useState('');
     const history = useNavigate('');
 
-    function login(){
+   
        
         
         async function login(e){
@@ -28,7 +28,7 @@ function Login() {
             }
         
         }
-    }
+    
 
    
     return(
