@@ -1,19 +1,20 @@
 const horarioModel = require("../models/Horarios");
 const UserModel = require("../models/User");
-
+const bcrypt = require("bcrypt")
 class User {
   
   async create(req, res) {
-    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha } = req.body;
+    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha} = req.body;
+    const hash = bcrypt.hashSync(senha,10)
     if(horariosDisponiveis){
-      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha});
+      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha:hash});
     return res.status(201).json({ message: "Usuário criado!" });
     }
     return res.status(400).json({message: "Você precisa definir horários disponivéis!"})
   }
 
   async get(req, res) {
-    const user = await UserModel.find();
+    const user = await UserModel.find().select("-senha");
     return res.status(200).json({ user });
   }
 
