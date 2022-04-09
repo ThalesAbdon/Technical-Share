@@ -1,7 +1,6 @@
 import * as React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FindMentors from './views/SearchMentors';
-import TesteViews from './views/TesteView';
 import LoginPage from "./views/Login";
 import Navbar from './views/Navbar';
 import Chat from "./components/chat";
@@ -16,7 +15,7 @@ const App = () => {
        <Route path="/" element={<LoginPage />}/>
         <Route path="/buscar" element={<FindMentors/>}/>
         <Route path="/login" element={<LoginPage />}/>
-        <Route path="/teste" element={<TesteViews />}/>
+        {/* <Route path="/teste" element={<Testando />}/> */}
         <Route path="/chat" element={<Chat/>}/>
       </Routes>
 

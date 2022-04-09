@@ -29,7 +29,7 @@ export default function MentorsGrid() {
         <Modal.Body>
           <Container className="d-flex align-items-center justify-content-center center">
             <Row className="d-flex justify-content-center center">
-              <Col xs={12} md={6} className="pb-3">
+              <Col xs={12} md={5} className="pb-3">
                 <div className="mb-3">
                   <Card>
                     <Card.Body>
@@ -51,7 +51,7 @@ export default function MentorsGrid() {
                   </Card>
                 </div>
               </Col>
-              <Col xs={12} md={6} className="pb-3 justify-content-center">
+              <Col xs={12} md={7} className="pb-3 justify-content-center">
                 <div className="mb-3">
                   <Card>
                     <Card.Body>
