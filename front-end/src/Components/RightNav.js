@@ -80,7 +80,7 @@ const RightNav = ({ open }) => {
     <Ul open={open}>
       <li><a href="/buscar" className="menu">Buscar mentoria</a></li>
       <li><a href="/" className="menu">Oferecer mentoria</a></li>
-      <li><a href="/" className="menu">Meus agendamentos</a></li>
+      <li><a href="/agendamentos" className="menu">Meus agendamentos</a></li>
       <li><a href="/" className="menu2">Meu perfil</a></li>
     </Ul>
   )
