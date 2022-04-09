@@ -1,7 +1,4 @@
-
-import { Navigate} from "react-router-dom";
-
-
+import { Navigate} from "react-router-dom";]
 function Auth(){
    const token = localStorage.getItem("token")
    if(token){
@@ -14,3 +11,4 @@ function Auth(){
 }
 
 export default Auth;
+  

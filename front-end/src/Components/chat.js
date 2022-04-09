@@ -1,19 +1,50 @@
+import React, { useState, useEffect } from "react";
+import Message from "../Message/Message";
+import "./Chat.css";
+import { Input } from "@material-ui/core";
+import SendIcon from "@material-ui/icons/Send";
+import Auth from "../../Auth/Auth"
 
-import io from "socket.io-client";
+export default function Chat({ socket }) {
+	const [message, setMessage] = useState("");
+	const [messageList, setMessageList] = useState([]);
 
-import { useState, useEffect } from "react";
-import Auth from "../Auth/Auth";
-import Join from "./Join/Join";
-import Chat from "./Chat/Chat";
+	useEffect(() => {
+		socket.on("receiveMessage", (data) => {
+			setMessageList((list) => [...list, data]);
+		});
+	}, [socket]);
 
-const socket = io.connect("http://localhost:5000");
-
-function Mensagem() {
-	const [chatVisible, setChatVisible] = useState(false);
 	useEffect(() =>{
-		Auth()
-		},[])
-	return <div className="App">{chatVisible ? <Chat socket={socket} /> : <Join socket={socket} setVisibility={setChatVisible} />}</div>;
-}
+    Auth()
+	},[])
+	 
+	const sendMessage = () => {
+		if (message.trim() === "") return;
+		socket.emit("message", { userId: socket.id, name: socket.name, message });
+		setMessage("");
+		clearInput();
+	};
 
-export default Mensagem;
+	const clearInput = () => {
+		document.querySelector("#input").value = "";
+	};
+
+	return (
+		<div className="chat-container">
+			<div className="chat-body">
+				<div className="messages">
+					<div className="messages-list">
+						{messageList.map((data) => (
+							<Message text={data.message} author={data.name} bot={data.bot} socket={socket} authorId={data.userId} />
+						))}
+					</div>
+				</div>
+			</div>
+			<div className="chat-footer">
+				<Input className="message-input" placeholder="Write a message..." type="text" id="input" onChange={(e) => setMessage(e.target.value)} />
+				<SendIcon className="btn-send" color="primary" onClick={() => sendMessage()} />
+			</div>
+		</div>
+	);
+}
