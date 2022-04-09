@@ -1,3 +1,10 @@
+ul, li {
+    list-style-type: none;
+    display: inline;
+    padding: 0 !important;
+    font-size: 14px;
+}
+
 img.avatar {
     width:101px;
     height: 101px;
@@ -6,88 +13,65 @@ img.avatar {
     margin-right: 10px;
 }
 
-.modal-header, .card{
-    border: unset !important;
-
-    button.btn-close {
-        background: rgb(195,195,195);
-        border-radius: 100px;
-        padding: 15px;
-        margin-top:-35px;
-        margin-right: -35px;
-    }
-}
-
-.react-calendar {
-    width: 470px;
-    width: unset !important;
-    border: unset !important;
-    background: #FEBBA2 !important;
-    border-radius: 10px !important;
+.modal {
     font-family: 'Montserrat', sans-serif;
+    color: #262558;
 
+    h6 {
+        font-weight: 700;
+        font-size: 20px;
+    }
+    .card-text{
+        font-weight: 600;
+    }
+    .modal-header, .card{
+        border: unset !important;
 
-    button,
-    button:hover {
-        background-color: #EA3800 !important;
-        color: #fff;
-        border-radius: 10px !important;
+        button.btn-close {
+            background: rgb(195,195,195);
+            border-radius: 100px;
+            padding: 15px;
+            margin-top:-35px;
+            margin-right: -35px;
+        }
     }
 
-    .react-calendar__tile,
-    .react-calendar__month-view__days__day,
-    .react-calendar__month-view__days__day--neighboringMonth {
-        border-radius: 10px;
-        font-size: 20px !important;
-        font-weight: 900 !important;
-        max-width: 58px !important;
-        margin: 5px !important;
+    .hour,
+    .btn-primary {
+    background-color: #FE5517;
+    padding: 8px 20px;
+    margin-right: 16px;
+    margin-top:3px;
+    border-radius: 24px;
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    border: unset;
     }
 
-    .react-calendar__month-view__weekdays__weekday {
-        background-color: #1B1A3E;
-        color: #fff;
-        font-size: 12px !important;
-        font-weight: 900 !important;
-        border-radius: 10px;
-        max-width: 58px;
-        margin: 5px;
-        text-decoration: unset !important;
+    .btn-agendar {
+        width: 138px;
+        font-size: 20px;
+        font-weight: 800;
+        margin:0px -30px -24px 0px;
     }
 
-    .react-calendar__navigation,
-    .react-calendar__navigation:hover {
-        background-color: #EA3800 !important;
-        font-size: 25px;
-        font-family: 'Montserrat', sans-serif;
-        border-radius: 10px !important;
-    }
-
-    .react-calendar__navigation__label__labelText,
-    .react-calendar__navigation__label__labelText--from {
-        font-weight: 800 !important;
-        color: #FFF !important;
+    .box-label {
+        padding:11px;
+        color:#fff;
+        text-align:center;
+        background-color: #EA3800;
+        font-size: 18px;
+        font-weight: 700;
         text-transform: uppercase;
+        max-width: 470px;
+        border-radius:10px;
+        margin:10px 0px;
     }
 
-    .react-calendar__navigation__arrow,
-    .react-calendar__navigation__prev-button,
-    .react-calendar__navigation__prev2-button,
-    .react-calendar__navigation__next2-button {
-        background-color: #EA3800 !important;
-        color: #fff !important;
-    }
 }
-
 section {
     font-family: 'Montserrat', sans-serif;
-
-    ul, li {
-        list-style-type: none;
-        display: inline;
-        padding: 0;
-        font-size: 14px;
-    }
 
     .card {
         max-width:500px;
@@ -104,35 +88,6 @@ section {
         .card-text {
             font-size: 16px;
         }
-
-        .skills {
-            li {
-                background-color: #FE5517;
-                text-transform: uppercase;
-                padding: 12px 12px;
-                margin-right: 16px;
-                border-radius: 24px;
-                color: #fff;
-                font-weight: 600;
-            }
-        }
-
-        .availableTimes {
-
-            font-weight: 700;
-            font-size: 14px;
-            padding-top: 10px;
-            
-            li {
-                background-color: #1B1A3E;
-                padding: 12px 30px;
-                margin-right: 16px;
-                margin-top:10px;
-                border-radius: 24px;
-                color: #fff;
-                font-weight: 700;
-            }
-        }
     }
 
     .btn {
@@ -148,5 +103,38 @@ section {
         a, a:hover {
             color: #FFF;
         }
+    }
+}
+
+.skills-item {
+    //div {
+        background-color: #FE5517;
+        text-transform: uppercase;
+        padding: 12px 12px;
+        margin-right: 16px;
+        margin-top:3px;
+        border-radius: 24px;
+        color: #fff;
+        font-weight: 600;
+        display: inline-block;
+    //}
+}
+
+.availableTimes {
+
+    font-weight: 700;
+    font-size: 14px;
+    padding-top: 10px;
+    
+    .hour,
+    .btn-primary {
+        background-color: #1B1A3E;
+        padding: 12px 26px;
+        margin-right: 16px;
+        margin-top:3px;
+        border-radius: 24px;
+        color: #fff;
+        font-weight: 700;
+        display: inline-block;
     }
 }
