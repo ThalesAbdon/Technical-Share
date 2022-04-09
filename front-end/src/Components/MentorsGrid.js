@@ -17,6 +17,27 @@ export default function MentorsGrid() {
   const [modalShow, setModalShow] = React.useState(false);
   console.log(modalShow);
 
+  //coisas do calendario
+  const [dateState, setDateState] = useState(new Date())
+  const changeDate = (e) => {
+    setDateState(e)
+    setVisible(true)
+  }
+  const [visible, setVisible] = React.useState(false);
+  
+  //pega o valor da hora
+  const [hour, setHour] = React.useState(false);
+  function hourClick(h){
+    setHour(h)
+  }
+  const data = moment(dateState).format('DD/MM/YYYY');
+  
+  var year = new Date().getFullYear()
+  //variavel que guarda o mês atual 
+  var month = new Date().getMonth()
+  //variavel que guarda o dia atual e soma + 7 dias para assim sempre ser disponivel marcar mentoria no periodo de 1 semana 
+  var day = Number( String(new Date(). getDate()). padStart(2,'0')) + 30
+
   //modal com o perfil e agenda do mentor
   function MyVerticallyCenteredModal(props) {
     return (
@@ -70,16 +91,18 @@ export default function MentorsGrid() {
                           maxDate = {new Date(year, month, day)}
                           />
                     
-                            <div class="box-label">Escolha um horário</div>
-                          <div className="available-times">
-                            <div>
-                              {profile ? profile.horariosDisponiveis.map((index) => {
-                                return (
-                                  <Button className="hour"  onClick={() => hourClick(index)} > {index} </Button>
-                                  );}) : <Button> OI </Button>
-                              }
+                          {visible && <div class="box-label">Escolha um horário</div>}
+                            <div className="available-times">
+                              <div>
+                                {profile ? profile.horariosDisponiveis.map((index) => {
+                                  let hrs = <Button className="hour"  onClick={() => hourClick(index)} > {index} </Button>
+                                  return ( 
+                                    visible && hrs
+                                    );}) : <Button> OI </Button>
+                                }
+                              </div>
                             </div>
-                          </div>
+                          
                           </center>
                     </Card.Body>
                   </Card>
@@ -165,24 +188,6 @@ export default function MentorsGrid() {
     </Col>
 ));
 
-  //coisas do calendario
-  const [dateState, setDateState] = useState(new Date())
-  const changeDate = (e) => {
-    setDateState(e)
-  }
-  
-  //pega o valor da hora
-  const [hour, setHour] = React.useState(false);
-  function hourClick(h){
-    setHour(h)
-  }
-  const data = moment(dateState).format('DD/MM/YYYY');
-  
-  var year = new Date().getFullYear()
-  //variavel que guarda o mês atual 
-  var month = new Date().getMonth()
-  //variavel que guarda o dia atual e soma + 7 dias para assim sempre ser disponivel marcar mentoria no periodo de 1 semana 
-  var day = Number( String(new Date(). getDate()). padStart(2,'0')) + 30
 
   return (
     <section>
