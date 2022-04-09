@@ -18,7 +18,7 @@ router.get('/api/get',User.get)
 //get que busca um User por algum parametro definido na busca
 router.get('/api/search',User.search)
 //get que lista os horários agendados
-router.get('/api/listarAgendaUser/:id',User.listarAgendaUser)
+router.get('/api/listarAgendaUser/',auth.authenticate,User.listarAgendaUser)
 //get que lista todos os horários
 router.get('/api/listarTodosOsHorarios/:id',User.listarTodosOsHorarios)
 

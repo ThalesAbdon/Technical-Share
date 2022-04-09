@@ -75,6 +75,7 @@ class User {
     try{
     const horariomarcado = await horarioModel.create({
       horario: req.body.horario, 
+      idAluno: req.user.id,
       user: req.params.id
     })
     return res.status(200).json({message: "Horário marcado!"})
@@ -86,7 +87,7 @@ class User {
 
   async listarAgendaUser(req,res){
     try{
-    const horarios = await horarioModel.find({user: req.params.id}).populate({path: 'user', select: '-senha'});
+    const horarios = await horarioModel.find({idAluno: req.user.id}).populate({path: 'user', select: '-senha'});
     return res.status(200).json(horarios)
     } catch(error){
       return res.status(200).json([])

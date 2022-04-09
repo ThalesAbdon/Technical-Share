@@ -1,0 +1,152 @@
+img.avatar {
+    width:101px;
+    height: 101px;
+    border-radius: 100%;
+    float:left;
+    margin-right: 10px;
+}
+
+.modal-header, .card{
+    border: unset !important;
+
+    button.btn-close {
+        background: rgb(195,195,195);
+        border-radius: 100px;
+        padding: 15px;
+        margin-top:-35px;
+        margin-right: -35px;
+    }
+}
+
+.react-calendar {
+    width: 470px;
+    width: unset !important;
+    border: unset !important;
+    background: #FEBBA2 !important;
+    border-radius: 10px !important;
+    font-family: 'Montserrat', sans-serif;
+
+
+    button,
+    button:hover {
+        background-color: #EA3800 !important;
+        color: #fff;
+        border-radius: 10px !important;
+    }
+
+    .react-calendar__tile,
+    .react-calendar__month-view__days__day,
+    .react-calendar__month-view__days__day--neighboringMonth {
+        border-radius: 10px;
+        font-size: 20px !important;
+        font-weight: 900 !important;
+        max-width: 58px !important;
+        margin: 5px !important;
+    }
+
+    .react-calendar__month-view__weekdays__weekday {
+        background-color: #1B1A3E;
+        color: #fff;
+        font-size: 12px !important;
+        font-weight: 900 !important;
+        border-radius: 10px;
+        max-width: 58px;
+        margin: 5px;
+        text-decoration: unset !important;
+    }
+
+    .react-calendar__navigation,
+    .react-calendar__navigation:hover {
+        background-color: #EA3800 !important;
+        font-size: 25px;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 10px !important;
+    }
+
+    .react-calendar__navigation__label__labelText,
+    .react-calendar__navigation__label__labelText--from {
+        font-weight: 800 !important;
+        color: #FFF !important;
+        text-transform: uppercase;
+    }
+
+    .react-calendar__navigation__arrow,
+    .react-calendar__navigation__prev-button,
+    .react-calendar__navigation__prev2-button,
+    .react-calendar__navigation__next2-button {
+        background-color: #EA3800 !important;
+        color: #fff !important;
+    }
+}
+
+section {
+    font-family: 'Montserrat', sans-serif;
+
+    ul, li {
+        list-style-type: none;
+        display: inline;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .card {
+        max-width:500px;
+        background-color: #FEBBA2;
+        color: #262558;
+        z-index: -1;
+        border-radius: unset;
+
+        h6 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 16px;
+        }
+
+        .skills {
+            li {
+                background-color: #FE5517;
+                text-transform: uppercase;
+                padding: 12px 12px;
+                margin-right: 16px;
+                border-radius: 24px;
+                color: #fff;
+                font-weight: 600;
+            }
+        }
+
+        .availableTimes {
+
+            font-weight: 700;
+            font-size: 14px;
+            padding-top: 10px;
+            
+            li {
+                background-color: #1B1A3E;
+                padding: 12px 30px;
+                margin-right: 16px;
+                margin-top:10px;
+                border-radius: 24px;
+                color: #fff;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .btn {
+        width: 162px;
+        height: 48px;
+        background-color: #EA3800;
+        color: #FFF;
+        font-weight: 700;
+        border-radius: 24px;
+        margin:-24px -30px 0px 0px;
+        z-index: 1;
+
+        a, a:hover {
+            color: #FFF;
+        }
+    }
+}
