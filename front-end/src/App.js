@@ -7,10 +7,6 @@ import Navbar from './views/Navbar';
 import Chat from "./components/chat";
 import './App.scss';
 
-
-
-
-
 const App = () => {
   return (
     <BrowserRouter>
@@ -22,7 +18,6 @@ const App = () => {
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/teste" element={<TesteViews />}/>
         <Route path="/chat" element={<Chat/>}/>
-
       </Routes>
 
     </BrowserRouter>

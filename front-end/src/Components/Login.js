@@ -4,7 +4,6 @@ import './Login.scss';
 import api from '../services/api'
 import { useNavigate } from 'react-router-dom';
 
-
 document.body.style = "background: transparent";
 
 function Login() {  
@@ -13,9 +12,6 @@ function Login() {
     const [senha,setSenha] = useState('');
     const history = useNavigate('');
 
-   
-       
-        
         async function login(e){
             e.preventDefault(); 
             try{
@@ -28,14 +24,11 @@ function Login() {
             }
         
         }
-    
-
    
     return(
     <section className="d-flex">
         <Container>
-
-     <Row className="justify-content-center center mt-5 pt-5">
+          <Row className="justify-content-center center mt-5 pt-5">
                 <h1>Olá, <span>#sanguelaranja</span></h1>
                 <h5 className="mt-4">Cadastre-se para entrar nessa vitamina de conhecimento e ajuda mútua</h5>
                 <center className="box mt-5">
