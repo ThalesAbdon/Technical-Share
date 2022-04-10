@@ -9,23 +9,12 @@ export default function Chat({ socket }) {
 	const [message, setMessage] = useState("");
 	const [messageList, setMessageList] = useState([]);
 	
-
-	/*
-      document.addEventListener("keypress", function(e){
-		  if(e.key === 'Enter'){
-			  const btn = document.querySelector("button")
-			  btn.click(sendMessage());
-		  }
-	  })
-    */
-            
 	  function handleKeyDown(e){
 		if(e.keyCode === 13) { 
 			sendMessage()
 	  }
 	}
-	  
-
+	
 	useEffect(() => {
 		socket.on("receiveMessage", (data) => {
 			setMessageList((list) => [...list, data]);

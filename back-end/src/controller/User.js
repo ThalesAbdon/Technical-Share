@@ -65,6 +65,12 @@ class User {
     return res.status(200).json({ message: "Usuário Deletado!" });
   }
 
+  async searchName(req,res){
+    const user = await UserModel.findOne({_id: req.user.id})
+    console.log(user)
+    return res.status(200).json(user.name)
+  }
+
   async search(req,res){
     const user = await UserModel.find(req.query)
     console.log(req.query)
