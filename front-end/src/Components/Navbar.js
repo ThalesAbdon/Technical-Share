@@ -8,12 +8,11 @@ const Navigation = () => (
     <Container>
         <Navbar collapseOnSelect expand="lg" variant="dark">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Brand href="#home"><img src={Logo} width="268"/></Navbar.Brand>
+            <Navbar.Brand href="/"><img src={Logo} width="268"/></Navbar.Brand>
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link><NavLink exact className="menu" activeClassName="active" to='/buscar' >Home</NavLink></Nav.Link>
-                    <Nav.Link><NavLink className="menu" activeClassName="active" to='/teste'>Sobre a mentorange</NavLink></Nav.Link>
-                    <Nav.Link><NavLink to="/" className="menu" activeClassName="active">Cadastro</NavLink></Nav.Link>
+                    <Nav.Link><NavLink exact className="menu" activeClassName="active" to='/' >Home</NavLink></Nav.Link>
+                    <Nav.Link><NavLink className="menu" activeClassName="active" to='/buscar'>Buscar mentor</NavLink></Nav.Link>
                     <Nav.Link><NavLink to="/agendamentos" className="menu" activeClassName="active">Meus agendamentos</NavLink></Nav.Link>
                 </Nav>
                 <Nav>

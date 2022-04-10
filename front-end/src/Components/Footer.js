@@ -5,7 +5,7 @@ import Logo from '../resources/logo_mentorange-white.svg';
 import LogoFC from '../resources/logo_fcamara.svg'
 
 const Footer = () => (
-    <footer className="d-flex footer fixed-bottom mt-5">
+    <footer className="d-flex footer mt-5">
         <Container>
             <Row className="align-items-center">
                 <Col sm={12} md={4} className="copyright">
