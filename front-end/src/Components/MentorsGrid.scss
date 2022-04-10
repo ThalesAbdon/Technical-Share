@@ -1,3 +1,5 @@
+
+
 ul, li {
     list-style-type: none;
     display: inline;
@@ -137,4 +139,10 @@ section {
         font-weight: 700;
         display: inline-block;
     }
+}
+
+button.hour:hover,
+button.hour:active,
+button.hour:focus {
+    background-color: #1B1A3E !important;
 }

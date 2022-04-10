@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
+import swal from '@sweetalert/with-react';
 import './MentorsGrid.scss';
 import './Calendar.scss';
+import './Alert.scss';
 import {Card, Button, Container, Row, Col, Modal} from 'react-bootstrap';
 import api from '../services/api';
 import Calendar from 'react-calendar'
@@ -30,6 +33,27 @@ export default function MentorsGrid() {
   function hourClick(h){
     setHour(h)
   }
+
+// agendamento /////////
+  let loggedUser = '625060b071c0a9e2e22a1f7b';
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const userData = {
+      horario: completedata
+    };
+    axios.post(`http://localhost:5000/api/agendar/${loggedUser}`, userData).then((response) => {
+      console.log(response.status);
+    });
+    swal({
+      button: "X",
+      title: "Agendamento realizado com sucesso!",
+      button: "Meus agendamentos",
+    });
+    setModalShow(false)
+  };
+///////////////////////
+
   const data = moment(dateState).format('DD/MM/YYYY');
   
   var year = new Date().getFullYear()
@@ -112,11 +136,13 @@ export default function MentorsGrid() {
           </Container>
         </Modal.Body>
         <Row className="justify-content-end">
-          <Button className="hour btn-agendar">Agendar</Button>
+          <Button onClick={handleSubmit} className="hour btn-agendar">Agendar</Button>
         </Row>
       </Modal>
     );
   }
+
+  let completedata = data + " " + hour;
 
   function modalProfile(obj){
     setProfile(obj)
