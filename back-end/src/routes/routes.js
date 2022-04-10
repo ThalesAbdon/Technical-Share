@@ -7,8 +7,6 @@ const auth = require('../authentication/auth')
 //POST
 //post para criar um user
 router.post('/api/create',User.create)
-// post que adiciona um horário na agenda
-router.post('/api/agendar/:id',auth.authenticate,User.agendar)
 // post para login
 router.post('/api/login',User.login)
 
@@ -26,6 +24,8 @@ router.get('/api/listarTodosOsHorarios/:id',User.listarTodosOsHorarios)
 //PUT
 // put que atualiza a foto do avatar e do dados do usuário
 router.put('/api/update/:id',auth.authenticate,multer.single('avatar'),User.update)
+// put para agendar nova mentoria
+router.put('/api/agendar/:id',auth.authenticate,User.agendar)
 
 //DELETE
 //delete para deletar um usuário

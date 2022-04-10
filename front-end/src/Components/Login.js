@@ -3,6 +3,8 @@ import {Container,Form, Button, Row, Col} from 'react-bootstrap';
 import './Login.scss';
 import api from '../services/api'
 import { useNavigate } from 'react-router-dom';
+import swal from '@sweetalert/with-react';
+import './Alert.scss';
 
 document.body.style = "background: transparent";
 
@@ -20,7 +22,10 @@ function Login() {
                 localStorage.setItem("token",data.data.token);
                 return history("/buscar")    
             }catch(error){
-                alert("Email ou Senha incorretos!")
+                swal({
+                    title: "E-mail ou senha incorretos",
+                    icon: "error",
+                  });
             }
         
         }

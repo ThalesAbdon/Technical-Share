@@ -73,13 +73,17 @@ class User {
    
   async agendar(req,res){
     try{
-    const horariomarcado = await horarioModel.create({
+      if(req.params.id === req.user.id){
+        return res.json({message: "Você não pode dar mentoria para si mesmo!"})
+      }
+      const horariomarcado = await horarioModel.create({
       horario: req.body.horario, 
       idAluno: req.user.id,
       user: req.params.id
     })
     return res.status(200).json({message: "Horário marcado!"})
     }catch(error){
+      console.log(error)
       return res.json({message: "Horário já Agendado!"})
     }
   }
