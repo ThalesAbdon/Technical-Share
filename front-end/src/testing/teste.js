@@ -2,17 +2,20 @@ import React, { useEffect, useState }  from 'react';
 import './teste.scss';
 import {Container, Row, Col} from 'react-bootstrap';
 import api from '../services/api';
-import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import moment from 'moment';
 import Auth from "../Auth/Auth";
+import swal from '@sweetalert/with-react';
+import '../components/Alert.scss';
+
 
 export default function Testando () {
+
 
     async function cancelarHorario(id){
         if (window.confirm('Tem certeza que deseja cancelar seu agendamento?')) {
           const response = await api.delete(`/api/cancelarHorario/${id}`,{headers:{'x-access-token': token}})
-           alert(response.data.message)
+           swal({title: response.data.message})
            window.location.reload()
         } else {
           // Do nothing!
@@ -45,7 +48,7 @@ export default function Testando () {
                 <Col>
                     <span className="label-confirmar">Confirmar mentoria?</span>
                     <button className="sim">Sim</button>
-                    <button className="nao" onClick={() => cancelarHorario(mentor.horario)}>Não</button>
+                    <button className="nao" onClick={() => cancelarHorario(mentor._id)}>Não</button>
                     <button className="alterar">Alterar horário</button>
                 </Col>
             </Row>
@@ -73,6 +76,8 @@ export default function Testando () {
                 <div class="box-mentorias my-3">
                     <h5>Próximas mentorias como mentorado</h5>
                     <hr className="line"/>
+                        
+                        
                 </div>
                 
             </Row>

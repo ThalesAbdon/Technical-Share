@@ -1,13 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {Navbar, Nav, Container} from 'react-bootstrap';
 import Logo from '../resources/logo_mentorange-14.svg';
 import {NavLink} from 'react-router-dom';
 import './Navbar.scss';
 
-
-function home () {
-
-}
 const Navigation = () => (
     <Container>
         <Navbar collapseOnSelect expand="lg" variant="dark">
