@@ -6,7 +6,7 @@ app.use
 io.on("connect", (socket) => {
 	//console.log("New user connected!");
 	let nameSocket;
-
+ 
 	socket.on("userConnected", (name) => {
 		nameSocket = name;
 		io.emit("receiveMessage", { bot: true, message: `${name} connected!` });

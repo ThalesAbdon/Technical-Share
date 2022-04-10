@@ -19,6 +19,8 @@ router.get('/api/search',User.search)
 router.get('/api/listarAgendaUser/',auth.authenticate,User.listarAgendaUser)
 //get que lista todos os horários
 router.get('/api/listarTodosOsHorarios/:id',User.listarTodosOsHorarios)
+// get que busca usuário por name
+router.get('/api/searchName/',auth.authenticate,User.searchName)
 
 
 //PUT
