@@ -32,8 +32,8 @@ function Login() {
    
     return(
     <section className="d-flex">
-        <Container>
-          <Row className="justify-content-center center mt-5 pt-5">
+        <Container className="align-items-center">
+          <Row className="justify-content-center center mt-5 ">
                 <h1>Olá, <span>#sanguelaranja</span></h1>
                 <h5 className="mt-4">Cadastre-se para entrar nessa vitamina de conhecimento e ajuda mútua</h5>
                 <center className="box mt-5">
