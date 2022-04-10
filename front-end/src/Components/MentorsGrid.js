@@ -35,16 +35,24 @@ export default function MentorsGrid() {
   }
 
 // agendamento /////////
-  let loggedUser = '625060b071c0a9e2e22a1f7b';
+const token = localStorage.getItem('token');
+const [id,setId] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  async function handleSubmit(){
+   // e.preventDefault();
     const userData = {
       horario: completedata
     };
-    axios.post(`http://localhost:5000/api/agendar/${loggedUser}`, userData).then((response) => {
-      console.log(response.status);
-    });
+    try{
+      const data = await api.put(`/api/agendar/${id}`,{horario: userData.horario},{headers:{'x-access-token': token}})
+      console.log(userData)   
+  }catch(error){
+      console.log(error.response)
+  }
+
+
+
+
     swal({
       button: "X",
       title: "Agendamento realizado com sucesso!",
@@ -92,7 +100,7 @@ export default function MentorsGrid() {
                               {profile ? profile.skills.map((index) => {
                                 return (
                                   <div className="skills-item" key={profile._id}> {index} </div>
-                                  );}) : <li> OI</li>
+                                  );}) : <li> </li>
                               }
                           </ul>
                       </div>
@@ -122,7 +130,7 @@ export default function MentorsGrid() {
                                   let hrs = <Button className="hour"  onClick={() => hourClick(index)} > {index} </Button>
                                   return ( 
                                     visible && hrs
-                                    );}) : <Button> OI </Button>
+                                    );}) : <Button>  </Button>
                                 }
                               </div>
                             </div>
@@ -136,7 +144,9 @@ export default function MentorsGrid() {
           </Container>
         </Modal.Body>
         <Row className="justify-content-end">
-          <Button onClick={handleSubmit} className="hour btn-agendar">Agendar</Button>
+          
+          <Button onClick= {() => handleSubmit()} onChange={setId(profile._id)} className="hour btn-agendar">Agendar</Button>
+       
         </Row>
       </Modal>
     );

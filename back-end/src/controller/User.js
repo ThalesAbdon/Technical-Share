@@ -73,12 +73,17 @@ class User {
    
   async agendar(req,res){
     try{
-    const horariomarcado = await horarioModel.create({
+      if(req.params.id === req.user.id){
+        return res.json({message: "Você não pode dar mentoria para si mesmo!"})
+      }
+      const horariomarcado = await horarioModel.create({
       horario: req.body.horario, 
+      idAluno: req.user.id,
       user: req.params.id
     })
     return res.status(200).json({message: "Horário marcado!"})
     }catch(error){
+      console.log(error)
       return res.json({message: "Horário já Agendado!"})
     }
   }
@@ -86,7 +91,7 @@ class User {
 
   async listarAgendaUser(req,res){
     try{
-    const horarios = await horarioModel.find({user: req.params.id}).populate('user')
+    const horarios = await horarioModel.find({idAluno: req.user.id}).populate({path: 'user', select: '-senha'});
     return res.status(200).json(horarios)
     } catch(error){
       return res.status(200).json([])
@@ -96,7 +101,7 @@ class User {
 
   //ajeitar para listar apenas um user
   async listarTodosOsHorarios(req,res){
-    const horarios = await horarioModel.find().populate('user')
+    const horarios = await horarioModel.find().populate({path: 'user', select: '-senha'})
     return res.status(200).json(horarios)
   }
 

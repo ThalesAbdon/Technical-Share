@@ -18,6 +18,7 @@ const Navigation = () => (
                     <Nav.Link><NavLink exact className="menu" activeClassName="active" to='/buscar' >Home</NavLink></Nav.Link>
                     <Nav.Link><NavLink className="menu" activeClassName="active" to='/teste'>Sobre a mentorange</NavLink></Nav.Link>
                     <Nav.Link><NavLink to="/" className="menu" activeClassName="active">Cadastro</NavLink></Nav.Link>
+                    <Nav.Link><NavLink to="/agendamentos" className="menu" activeClassName="active">Meus agendamentos</NavLink></Nav.Link>
                 </Nav>
                 <Nav>
                     <Nav.Link><NavLink to="/login" className="menu2">Login</NavLink></Nav.Link>
