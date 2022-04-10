@@ -5,6 +5,7 @@ import LoginPage from "./views/Login";
 import Navbar from './views/Navbar';
 import Chat from "./components/chat";
 import Agendamentos from "./components/Agendamentos";
+import TesteViews from "./views/TesteView";
 import './App.scss';
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
        {/* <Route path="/" element={<LoginPage />}/> */}
         <Route path="/buscar" element={<FindMentors/>}/>
         <Route path="/login" element={<LoginPage />}/>
-        {/* <Route path="/teste" element={<Testando />}/> */}
+        <Route path="/teste" element={<TesteViews />}/>
         <Route path="/chat" element={<Chat/>}/>
         <Route path="/agendamentos" element = {<Agendamentos/>}/>
       </Routes>

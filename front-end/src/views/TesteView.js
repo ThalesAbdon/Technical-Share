@@ -1,11 +1,11 @@
 import React from 'react';
 // // import Profile from '../components/MentorsGrid';
-import Testando from '../testing/TESTE';
+//import Testando from '../testing/teste';
 
 const TesteViews = () => (
     <>
-        <Testando />
-    olá
+        {/* <Testando /> */}
+            olá
         {/* <Header /> */}
         {/* <Testes/> */}
     </>
