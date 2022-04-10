@@ -1,0 +1,73 @@
+section {
+    text-align: left;
+    
+    .bar {
+        max-width: 980px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+        padding: 12px;
+        border-radius: 24px;
+        background-color: #FE5517;
+    }
+
+    .box-mentorias {
+        width: 980px;
+        background-color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        padding: 13px 50px;
+        border-radius: 24px;
+        max-height: 40vh;
+        min-height: 200px;
+        text-align: left;
+
+        h5 {
+            color: #1D1D45;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: left;
+            text-indent: 20px;
+        }
+
+        hr.line {
+            border:0;
+            color: #1D1D45;
+            opacity: 1;
+            margin: 10px;
+        }
+
+        .mentoria {
+            background-color: #FEBBA2;
+            color: #1D1D45;
+            font-size: 15.5px;
+            padding: 14px 10px;
+            width: 880px;
+            border-radius: 24px;
+            margin-top: 10px;
+
+            button {
+                padding: 2px 13px;
+                font-size: 14px;
+                margin-left: 4px;
+                border-radius: 24px;
+                color: #fff;
+                display: inline-block;
+                border: unset;
+            }
+            .sim{
+                background-color: #EA3800;
+            }
+            .nao {
+                background-color: #1D1D45;
+            }
+            .alterar{
+                background-color: #FE5517;
+            }
+
+            .label-confirmar {
+                color: #1A3E38;
+                font-weight: 700;
+            }
+        }
+    }
+}
