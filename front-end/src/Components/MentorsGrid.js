@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
 import swal from '@sweetalert/with-react';
 import './MentorsGrid.scss';
 import './Calendar.scss';
@@ -68,7 +67,7 @@ const [id,setId] = useState('');
   //variavel que guarda o mês atual 
   var month = new Date().getMonth()
   //variavel que guarda o dia atual e soma + 7 dias para assim sempre ser disponivel marcar mentoria no periodo de 1 semana 
-  var day = Number( String(new Date(). getDate()). padStart(2,'0')) + 30
+  var day = Number( String(new Date().getDate()).padStart(2,'0')) + 30
 
   //modal com o perfil e agenda do mentor
   function MyVerticallyCenteredModal(props) {

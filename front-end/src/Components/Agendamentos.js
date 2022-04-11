@@ -3,8 +3,7 @@ import './Agendamentos.scss';
 import {Container, Row, Col} from 'react-bootstrap';
 import api from '../services/api';
 import 'react-calendar/dist/Calendar.css';
-import moment from 'moment';
-import Auth from "../Auth/Auth";
+import { useNavigate } from 'react-router-dom';
 import swal from '@sweetalert/with-react';
 import './Alert.scss';
 
@@ -24,6 +23,12 @@ export default function Testando () {
     
        }
 
+       function goChat(){
+            return history("/chat")    
+       }
+
+        // ir para o chat
+       const history = useNavigate('');
        //perfis que são exibidos quando abre a tela
         const [perfis, setPerfis] = useState([]);
         //token do user
@@ -47,7 +52,7 @@ export default function Testando () {
                 </Col>
                 <Col>
                     <span className="label-confirmar">Confirmar mentoria?</span>
-                    <button className="sim">Sim</button>
+                    <button className="sim" onClick={() => goChat()}>Sim</button>
                     <button className="nao" onClick={() => cancelarHorario(mentor._id)}>Não</button>
                     <button className="alterar">Alterar horário</button>
                 </Col>

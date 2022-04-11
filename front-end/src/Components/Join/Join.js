@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Join.css";
-import { Input, Button } from "@material-ui/core";
+import {Button } from "@material-ui/core";
 import Auth from "../../Auth/Auth";
 import api from "../../services/api";
 
