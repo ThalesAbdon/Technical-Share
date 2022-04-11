@@ -9,9 +9,9 @@ const horarioSchema = new mongoose.Schema({
     },
 
     idAluno:{
-     type: String,
-     required: true,
-     allowNull: false,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required: true,
     },
     //Fazendo relacionamento com model User 
     user:{

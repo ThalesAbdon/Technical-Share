@@ -36,6 +36,13 @@ class User {
     return res.status(200).json({ user });
   }
 
+
+  async getId(req, res) {
+   const user = await horarioModel.find({user:{ _id: req.user.id}}).populate({path:"idAluno", select: "-senha"})
+    return res.status(200).json({user});
+  }
+
+
   async update(req, res) {
     if (req.file) {
       const avatar = `http://localhost:${process.env.Port}/files/images/${req.file.filename}`;
@@ -96,12 +103,18 @@ class User {
   
 
   async listarAgendaUser(req,res){
-    try{
-    const horarios = await horarioModel.find({idAluno: req.user.id}).populate({path: 'user', select: '-senha'});
+   /* try{
+    const horarios = await horarioModel.find({$or:
+      [{idAluno: req.user.id},{user:req.user.id}]
+    }).populate({path:'idAluno', select: '-senha'}).populate({path: 'user', select: '-senha'})
     return res.status(200).json(horarios)
     } catch(error){
       return res.status(200).json([])
-    }
+    }*/
+
+    const user = await horarioModel.find({$or:[{idAluno:req.user.id}]}).populate({path:"user", select: "-senha"})
+    console.log(user)
+    return res.status(200).json({user});
   }
 
 
