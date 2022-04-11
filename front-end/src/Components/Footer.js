@@ -19,7 +19,7 @@ const Footer = () => (
                     width="235"/>
                 </Col>
                 <Col sm={12} md={3} className="help text-end">
-                    Ajuda
+                    
                 </Col>
             </Row>
         </Container>

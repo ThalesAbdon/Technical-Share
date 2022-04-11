@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import swal from '@sweetalert/with-react';
+import {NavLink} from 'react-router-dom';
 import './MentorsGrid.scss';
 import './Calendar.scss';
 import './Alert.scss';
@@ -23,9 +24,7 @@ export default function MentorsGrid() {
   const [dateState, setDateState] = useState(new Date())
   const changeDate = (e) => {
     setDateState(e)
-    setVisible(true)
   }
-  const [visible, setVisible] = React.useState(false);
   
   //pega o valor da hora
   const [hour, setHour] = React.useState(false);
@@ -98,7 +97,15 @@ const [id,setId] = useState('');
                               {Auth()}
                               {profile ? profile.skills.map((index) => {
                                 return (
-                                  <div className="skills-item" key={profile._id}> {index} </div>
+                                  <Row className="align-items-center">
+                                    <Col sm={6}>
+                                    
+                                  <div className="skills-item-modal" key={profile._id}> {index} </div> 
+                                    </Col>
+                                    <Col>
+                                    xxx
+                                    </Col>
+                                    </Row>
                                   );}) : <li> </li>
                               }
                           </ul>
@@ -122,13 +129,13 @@ const [id,setId] = useState('');
                           maxDate = {new Date(year, month, day)}
                           />
                     
-                          {visible && <div class="box-label">Escolha um horário</div>}
+                          <div class="box-label">Escolha um horário</div>
                             <div className="available-times">
                               <div>
                                 {profile ? profile.horariosDisponiveis.map((index) => {
                                   let hrs = <Button className="hour"  onClick={() => hourClick(index)} > {index} </Button>
                                   return ( 
-                                    visible && hrs
+                                    hrs
                                     );}) : <Button>  </Button>
                                 }
                               </div>

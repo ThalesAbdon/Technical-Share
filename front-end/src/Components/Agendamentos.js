@@ -11,10 +11,18 @@ import './Alert.scss';
 export default function Testando () {
 
 
+    function delay(n){
+        return new Promise(function(resolve){
+            setTimeout(resolve,n*1000);
+        });
+    }
+
     async function cancelarHorario(id){
-        if (window.confirm('Tem certeza que deseja cancelar seu agendamento?')) {
+        if (window.swal({title: 'Cancelando agendamento...'})) {
           const response = await api.delete(`/api/cancelarHorario/${id}`,{headers:{'x-access-token': token}})
-           swal({title: response.data.message})
+          await delay(3)
+           swal({title: response.data.message, icon: 'success'})
+           await delay(3)
            window.location.reload()
         } else {
           // Do nothing!
@@ -45,21 +53,24 @@ export default function Testando () {
         }, []);
 
         const agendamento = perfis.map(mentor => (
+          
             <div className="mentoria justify-content-center">
             <Row className="justify-content-center">
-                <Col>
+                <Col sm={12} md={6}>
                     Mentoria de {mentor.user.work} dia {mentor.horario}
+                    
                 </Col>
-                <Col>
+                <Col sm={12} md={2}>
                     <span className="label-confirmar">Confirmar mentoria?</span>
+
                     <button className="sim" onClick={() => goChat()}>Sim</button>
                     <button className="nao" onClick={() => cancelarHorario(mentor._id)}>Não</button>
                     <button className="alterar">Alterar horário</button>
                 </Col>
+                
             </Row>
             </div>
         ));
-
 
     return (
 
@@ -83,7 +94,7 @@ export default function Testando () {
                     <h5>Próximas mentorias como mentor</h5>
                     <hr className="line"/>
                         
-                        
+                        <h6>Nenhum agendamento encontrado</h6>
                         
                 </div>
                 
