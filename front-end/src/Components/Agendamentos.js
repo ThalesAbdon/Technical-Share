@@ -68,11 +68,6 @@ export default function Testando () {
             </div>
         ));
 
-        const [visible, setVisible] = React.useState(false);
-
-        
-
-
     return (
 
     <section className="d-flex">
