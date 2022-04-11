@@ -6,10 +6,10 @@ const generateToken = require("../authentication/jsonwebtoken");
 class User {
   
   async create(req, res) {
-    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha} = req.body;
+    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha,softSkills} = req.body;
     const hash = bcrypt.hashSync(senha,10)
     if(horariosDisponiveis){
-      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha:hash});
+      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha:hash,softSkills});
     return res.status(201).json({ message: "Usuário criado!" });
     }
     return res.status(400).json({message: "Você precisa definir horários disponivéis!"})

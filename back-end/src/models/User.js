@@ -50,6 +50,10 @@ senha:{
     allowNull: false,
     required: true, 
 },
+softSkills:{
+    type: String,
+    allowNull: false,
+}
 
 },{timestamps:true}
 )
