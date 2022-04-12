@@ -31,9 +31,10 @@ export default function Join({ socket, setVisibility }) {
 
   const handleSubmit = () => {
     if (name.trim() === "") return;
+    socket.emit("join_room",room);
     socket.name = name;
     setVisibility(true);
-    socket.to(room).emit("userConnected", name);
+    socket.emit("userConnected", name);
 
   };
 
@@ -59,8 +60,6 @@ export default function Join({ socket, setVisibility }) {
         
 
          <Button onClick={joinRoom}>Join Room</Button>
-         
-      
         <Button
           className="btn-join"
           variant="contained"

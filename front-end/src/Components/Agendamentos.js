@@ -46,7 +46,8 @@ export default function Testando () {
     
        }
 
-       function goChat(){
+       function goChat(id){
+           localStorage.setItem("room",id)
             return history("/chat")    
        }
 
@@ -93,7 +94,7 @@ export default function Testando () {
                 <Col sm={12} md={2}>
                     <span className="label-confirmar">Confirmar mentoria?</span>
 
-                    <button className="sim" onClick={() => goChat()}>Sim</button>
+                    <button className="sim" onClick={() => goChat(mentor._id)}>Sim</button>
                     <button className="nao" onClick={() => cancelarHorario(mentor._id)}>Não</button>
                     <button className="alterar">Alterar horário</button>
                 </Col>
@@ -114,7 +115,7 @@ export default function Testando () {
                 <Col sm={12} md={2}>
                     <span className="label-confirmar">Confirmar mentoria?</span>
 
-                    <button className="sim" onClick={() => goChat()}>Sim</button>
+                    <button className="sim" onClick={() => goChat(mentor._id)}>Sim</button>
                     <button className="nao" onClick={() => mentorCancelar(mentor._id)}>Não</button>
                     <button className="alterar">Alterar horário</button>
                 </Col>
