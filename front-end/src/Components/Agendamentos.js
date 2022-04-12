@@ -8,7 +8,7 @@ import swal from '@sweetalert/with-react';
 import './Alert.scss';
 
 
-export default function Testando () {
+export default function Agendamentos () {
 
 
     function delay(n){
@@ -22,7 +22,7 @@ export default function Testando () {
           const response = await api.delete(`/api/cancelarHorario/${id}`,{headers:{'x-access-token': token}})
           await delay(3)
            swal({title: response.data.message, icon: 'success'})
-           await delay(3)
+           await delay(2)
            window.location.reload()
         } else {
           // Do nothing!
@@ -37,7 +37,7 @@ export default function Testando () {
           const response = await api.delete(`/api/cancelarHorario/${id}`,{headers:{'x-access-token': token}})
           await delay(3)
            swal({title: response.data.message, icon: 'success'})
-           await delay(3)
+           await delay(2)
            window.location.reload()
         } else {
           // Do nothing!
@@ -85,13 +85,15 @@ export default function Testando () {
         const agendamento = perfis.map(mentor => (
           
             <div className="mentoria justify-content-center">
-            <Row className="justify-content-center">
+            <Row className="justify-content-center align-items-center">
                 <Col sm={12} md={6}>
-                    Mentoria de {mentor.user.work} <br/>Mentor(a): {mentor.user.name} <br/> Dia {mentor.horario}
+                    Mentoria de {mentor.user.work} dia {mentor.horario} <br/>Mentor(a): {mentor.user.name} <br/>
                     
                 </Col>
                 <Col sm={12} md={2}>
                     <span className="label-confirmar">Confirmar mentoria?</span>
+                </Col>
+                <Col sm={12} md={4}>
 
                     <button className="sim" onClick={() => goChat()}>Sim</button>
                     <button className="nao" onClick={() => cancelarHorario(mentor._id)}>Não</button>
