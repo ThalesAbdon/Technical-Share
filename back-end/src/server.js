@@ -9,7 +9,7 @@ io.on("connect", (socket) => {
  
 	socket.on("userConnected", (name) => {
 		nameSocket = name;
-		io.emit("receiveMessage", { bot: true, message: `${name} connected!` });
+		//io.emit("receiveMessage", { bot: true, message: `${name} connected!` });
 	});
 
 	socket.on("join_room",(data) =>{

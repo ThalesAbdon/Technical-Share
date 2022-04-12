@@ -108,7 +108,7 @@ export default function Testando () {
             <div className="mentoria justify-content-center">
             <Row className="justify-content-center">
                 <Col sm={12} md={6}>
-                    Mentoria de {mentor.idAluno.work} <br/>Aluno:{mentor.idAluno.name} <br/> Dia {mentor.horario}
+                    Aula para {mentor.idAluno.work} <br/>Aluno:{mentor.idAluno.name} <br/> Dia {mentor.horario}
                     
                     
                 </Col>
