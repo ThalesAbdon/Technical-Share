@@ -71,6 +71,9 @@ section {
                 margin-top: .1875rem;
                 background-color: #FE5517;
             }
+            button.alterar:disabled{
+                background-color: #FE885C;
+            }
         
             .label-confirmar {
                 color: #1A3E38;
