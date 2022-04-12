@@ -6,10 +6,10 @@ const generateToken = require("../authentication/jsonwebtoken");
 class User {
   
   async create(req, res) {
-    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha} = req.body;
+    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha,softSkills} = req.body;
     const hash = bcrypt.hashSync(senha,10)
     if(horariosDisponiveis){
-      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha:hash});
+      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha:hash,softSkills});
     return res.status(201).json({ message: "Usuário criado!" });
     }
     return res.status(400).json({message: "Você precisa definir horários disponivéis!"})
@@ -35,6 +35,13 @@ class User {
     const user = await UserModel.find().select("-senha");
     return res.status(200).json({ user });
   }
+
+
+  async getId(req, res) {
+   const user = await horarioModel.find({user:{ _id: req.user.id}}).populate({path:"idAluno", select: "-senha"})
+    return res.status(200).json({user});
+  }
+
 
   async update(req, res) {
     if (req.file) {
@@ -96,12 +103,18 @@ class User {
   
 
   async listarAgendaUser(req,res){
-    try{
-    const horarios = await horarioModel.find({idAluno: req.user.id}).populate({path: 'user', select: '-senha'});
+   /* try{
+    const horarios = await horarioModel.find({$or:
+      [{idAluno: req.user.id},{user:req.user.id}]
+    }).populate({path:'idAluno', select: '-senha'}).populate({path: 'user', select: '-senha'})
     return res.status(200).json(horarios)
     } catch(error){
       return res.status(200).json([])
-    }
+    }*/
+
+    const user = await horarioModel.find({$or:[{idAluno:req.user.id}]}).populate({path:"user", select: "-senha"})
+    console.log(user)
+    return res.status(200).json({user});
   }
 
 
