@@ -8,7 +8,8 @@ import Auth from "../../Auth/Auth"
 export default function Chat({ socket }) {
 	const [message, setMessage] = useState("");
 	const [messageList, setMessageList] = useState([]);
-	
+	const room = localStorage.getItem("room");
+
 	  function handleKeyDown(e){
 		if(e.keyCode === 13) { 
 			sendMessage()
@@ -26,8 +27,9 @@ export default function Chat({ socket }) {
 	},[])
 	 
 	const sendMessage = () => {
+	    console.log(room)
 		if (message.trim() === "") return;
-		socket.emit("message", { userId: socket.id, name: socket.name, message });
+		socket.emit("message", { userId: socket.id, name: socket.name, message, room});
 		setMessage("");
 		clearInput();
 	};

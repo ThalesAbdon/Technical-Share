@@ -8,10 +8,8 @@ import swal from '@sweetalert/with-react';
 import './Alert.scss';
 
 
-export default function Agendamentos () {
+export default function Testando () {
 
-    const [invisible, setInvisible] = useState(true);
-    const [visible, setVisible] = useState(false);
 
     function delay(n){
         return new Promise(function(resolve){
@@ -24,7 +22,7 @@ export default function Agendamentos () {
           const response = await api.delete(`/api/cancelarHorario/${id}`,{headers:{'x-access-token': token}})
           await delay(3)
            swal({title: response.data.message, icon: 'success'})
-           await delay(2)
+           await delay(3)
            window.location.reload()
         } else {
           // Do nothing!
@@ -39,7 +37,7 @@ export default function Agendamentos () {
           const response = await api.delete(`/api/cancelarHorario/${id}`,{headers:{'x-access-token': token}})
           await delay(3)
            swal({title: response.data.message, icon: 'success'})
-           await delay(2)
+           await delay(3)
            window.location.reload()
         } else {
           // Do nothing!
@@ -48,13 +46,8 @@ export default function Agendamentos () {
     
        }
 
-       function goChat(){
-            // setInvisible(false);
-            // setVisible(true);
-            // swal({title: 'Mentoria confirmada',text: 'Você está sendo encaminhado para o chat...', icon: 'success'})
-            // let alterar = document.getElementByClassName('alterar')
-            // alterar.setAttribute('disabled', 'disabled')
-            // delay(5)
+       function goChat(id){
+           localStorage.setItem("room",id)
             return history("/chat")    
        }
 
@@ -90,27 +83,20 @@ export default function Agendamentos () {
 
         }, []);
 
-
-
         const agendamento = perfis.map(mentor => (
           
             <div className="mentoria justify-content-center">
-            <Row className="justify-content-center align-items-center">
+            <Row className="justify-content-center">
                 <Col sm={12} md={6}>
-                    Mentoria de {mentor.user.work} dia {mentor.horario} <br/>Mentor(a): {mentor.user.name} <br/>
+                    Mentoria de {mentor.user.work} <br/>Mentor(a): {mentor.user.name} <br/> Dia {mentor.horario}
                     
                 </Col>
                 <Col sm={12} md={2}>
-                    {invisible && <span className="label-confirmar">Confirmar mentoria?</span>}
-                </Col>
-                <Col sm={12} md={4}>
+                    <span className="label-confirmar">Confirmar mentoria?</span>
 
-                    {invisible && <button className="sim" onClick={() => goChat()}>Sim</button>}
-                    {invisible && <button className="nao" onClick={() => cancelarHorario(mentor._id)}>Não</button>}
-                    {visible && <b>Presença confirmada!</b>}
-                    <button className="alterar" >Alterar horário</button>
-
-
+                    <button className="sim" onClick={() => goChat(mentor._id)}>Sim</button>
+                    <button className="nao" onClick={() => cancelarHorario(mentor._id)}>Não</button>
+                    <button className="alterar">Alterar horário</button>
                 </Col>
                 
             </Row>
@@ -120,17 +106,16 @@ export default function Agendamentos () {
         const agendamentoMentor = alunos.map(mentor => (
           
             <div className="mentoria justify-content-center">
-            <Row className="justify-content-center align-items-center">
+            <Row className="justify-content-center">
                 <Col sm={12} md={6}>
-                    Mentoria de {mentor.idAluno.work} dia {mentor.horario} <br/>Aluno(a): {mentor.idAluno.name} <br/> 
+                    Aula para {mentor.idAluno.work} <br/>Aluno:{mentor.idAluno.name} <br/> Dia {mentor.horario}
                     
                     
                 </Col>
                 <Col sm={12} md={2}>
                     <span className="label-confirmar">Confirmar mentoria?</span>
-                </Col>
-                <Col sm={12} md={4}>
-                    <button className="sim" onClick={() => goChat()}>Sim</button>
+
+                    <button className="sim" onClick={() => goChat(mentor._id)}>Sim</button>
                     <button className="nao" onClick={() => mentorCancelar(mentor._id)}>Não</button>
                     <button className="alterar">Alterar horário</button>
                 </Col>

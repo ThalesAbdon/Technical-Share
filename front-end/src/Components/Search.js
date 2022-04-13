@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './Search.scss';
-import {Container, InputGroup, FormControl, Row} from 'react-bootstrap';
+import {Container, InputGroup, FormControl, Row, Button} from 'react-bootstrap';
 import api from '../services/api';
 
 
@@ -28,6 +28,11 @@ export default function Search () {
                 <InputGroup className="input py-3" size="sm">
                     <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-md" placeholder="Digite aqui uma skill que você quer aprender" value={search}onChange = {e=>setSearch(e.target.value)}/><button onClick={buscar}>search</button>                
                 </InputGroup>
+                 <div>
+                <Button>
+                    Pesquisar
+                </Button>
+                </div>
                 <h2>Estes são os mentores com a <b>skill escolhida</b></h2>
             </Row>
         </Container>
