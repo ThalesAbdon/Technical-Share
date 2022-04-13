@@ -80,7 +80,7 @@ class User {
 
   async search(req,res){
     const user = await UserModel.find(req.query)
-    console.log(req.query)
+    console.log(req.query.skills)
     return res.status(200).json(user)
   }
    

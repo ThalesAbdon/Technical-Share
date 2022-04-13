@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import swal from '@sweetalert/with-react';
-import {NavLink} from 'react-router-dom';
 import './MentorsGrid.scss';
 import './Calendar.scss';
 import './Alert.scss';
@@ -12,7 +11,7 @@ import moment from 'moment';
 import Auth from "../Auth/Auth";
 
 export default function MentorsGrid() {
-
+  
   document.body.style = "background: transparent";
 
   //abre o modal
@@ -47,9 +46,6 @@ const [id,setId] = useState('');
   }catch(error){
       console.log(error.response)
   }
-
-
-
 
     swal({
       button: "X",

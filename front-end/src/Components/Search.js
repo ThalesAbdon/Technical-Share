@@ -1,6 +1,6 @@
 import React from "react";
 import './Search.scss';
-import {Container, InputGroup, FormControl, Row} from 'react-bootstrap';
+import {Container, InputGroup, FormControl, Row, Button} from 'react-bootstrap';
 
 document.body.style = "background: transparent";
 
@@ -12,6 +12,11 @@ const Search = () => (
                 <InputGroup className="input py-3" size="sm">
                     <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-md" placeholder="Digite aqui uma skill que você quer aprender"/>                    
                 </InputGroup>
+                 <div>
+                <Button>
+                    Pesquisar
+                </Button>
+                </div>
                 <h2>Estes são os mentores com a <b>skill escolhida</b></h2>
             </Row>
         </Container>
