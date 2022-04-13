@@ -9,11 +9,12 @@
 
 .navbar-container-home {
     width: 62%;
-    gap: 32px;
+    gap: 70px;
     padding: 0px 24px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 30px;
 }
 
 .navbar-container-home > a {
