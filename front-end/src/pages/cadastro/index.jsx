@@ -6,7 +6,7 @@ import Body from "../../components/CadastroComponents/Body"
 function Cadastro() {
     return (
         <React.Fragment>
-            <Header />,
+            <Header />
             <Body />
         </React.Fragment>
     )

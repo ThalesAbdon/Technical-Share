@@ -11,25 +11,21 @@ function Body() {
 
     return (
         <React.Fragment>
-            <section className="body-container">
-                <div className="content-container">
-                    <div className="titulo">
-                        <h1 className="title-h1">Olá, #sanguelaranja</h1>
-                        <h2>Bem-vindo a sua plataforma exclusiva de <h4 className="destaque">mentorias. </h4></h2>
-                        <div className="sub-titulo-container">
-                            <h3 className="sub-titulo">Aqui você pode ensinar, aprender, ajudar a tirar dúvidas, trocar experiências, </h3>
-                            <h3 className="sub-titulo">conhecer seus colegas #sanguelaranja,</h3>
-                            <h3 className="sub-titulo">pedir orientação e fazer agendamentos de mentorias.</h3>
-                            <h3 className="sub-titulo">Tudo simples, rápido e on-line.</h3>
-
-                        </div>
-                    </div>
+            <section className="home-container">
+                <div className="home-titulos-container">
+                    <h1>Olá,</h1><h1>#sanguelaranja</h1>
                 </div>
-                <div>
-                    <button className="botao" onClick={() => { redirecionarCadastro() }}>COMEÇAR</button>
+                <div className="home-sub-titulos-container">
+                    <h3>Bem-vindo à sua plataforma exclusiva de mentorias.</h3>
                 </div>
+                <div className="home-mensagens-container">
+                    <p>Aqui você pode ensinar, aprender, ajudar a tirar dúvidas, trocar experiências,</p>
+                    <p>conhecer seus colegas #sanguelaranja,</p>
+                    <p>pedir orientação e fazer agendamentos de mentorias.</p>
+                    <p>Tudo simples, rápido e on-line.</p>
+                </div>
+                <button className="botao" onClick={() => { redirecionarCadastro() }}>COMEÇAR</button>
             </section>
-
         </React.Fragment>
     )
 }

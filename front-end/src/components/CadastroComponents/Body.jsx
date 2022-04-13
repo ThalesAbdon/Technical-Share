@@ -1,34 +1,34 @@
 import React from "react";
-import "./Body.css"
+import "./Body.css";
 
 function Body() {
     return (
         <React.Fragment>
-            <div>
-                <h1 className="titulo">Olá, #sanguelaranja</h1>
-                <h2 className="sub-titulo">Cadastre-se para entrar nessa vitamina de conhecimento e ajuda mútua.</h2>
-            </div>
-            <div>
-                <p className="email">Email corporativo:</p>
-                <div className="inputs">
-                    <input className="input"></input>
+            <section className="section-cadastro-container">
+                <div className="section-cadastro-titulo-container">
+                    <h1>Olá,&nbsp;</h1><h1>#sanguelaranja</h1>
                 </div>
-                <p className="id">ID ou matrícula:</p>
-                <div className="inputs">
-                    <input className="input"></input>
+                <div className="section-cadastro-subtitulo-container">
+                    <h5>Cadastre-se para entrar nessa vitamina de conhecimento e ajuda mútua</h5>
                 </div>
-                <div className="paragrafo">
-                    <p className="paragrafo-one">Não sabe ou não possui ID/matrícula?</p>
+                <div className="section-cadastro-input-container">
+                    <div>
+                        <p>Email corporativo</p>
+                        <input className="section-cadastro-input" />
+                    </div>
+                    <div>
+                        <p>ID ou Matrícula</p>
+                        <input className="section-cadastro-input" />
+                        <br />
+                        <span>Não sabe ou não possui ID/ Matrícula?</span>
+                    </div>
+                    <div>
+                        <p>Senha</p>
+                        <input className="section-cadastro-input" />
+                    </div>
                 </div>
-                <p className="senha">Senha:</p>
-                <div className="inputs">
-                    <input className="input"></input>
-                </div>
-                <div className="conta">
-                    <h2 className="criar">CRIAR CONTA</h2>
-                </div>
-
-            </div>
+                <button className="section-cadastro-button">Criar conta</button>
+            </section>
         </React.Fragment>
     )
 }

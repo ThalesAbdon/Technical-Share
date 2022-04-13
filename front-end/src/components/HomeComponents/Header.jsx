@@ -1,19 +1,21 @@
-import React from "react"
+import React from "react";
 import "./Header.css"
+import logo from "../../assets/mentorangelog.png"
 
 function Header() {
     return (
-        <React.Fragment>
-            <header className="cabecalho">
-                <h2 className="titulo-cabecalho">Technical Share</h2>
-                <nav className="nav-bar">
-                    <a href="a">Home</a>
-                    <a href="a">Sobre a TechShare</a>
-                    <a href="a">Cadastro</a>
+        <>
+            <header className="cabecalho-home">
+                <div className="logo-container-home">
+                    <img src={logo} alt="logo" />
+                </div>
+                <nav className="navbar-container-home">
+                    <a href="#">HOME</a>
+                    <a href="#"><p>SOBRE A </p>MENTORAGE</a>
                 </nav>
+                <button className="button-login-home">Login</button>
             </header>
-
-        </React.Fragment>
+        </>
     )
 }
 export default Header;

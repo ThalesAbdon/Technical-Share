@@ -1,74 +1,76 @@
-.titulo {
-    color: #36357E;
+body {
+    background-color: #2A2962;
+}
+
+.section-cadastro-container {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    margin-top: 24px;
+    gap: 16px;
+}
+
+.section-cadastro-titulo-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.sub-titulo {
-    color: #36357E;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
+
+.section-cadastro-titulo-container h1 {
+    font-family: "Metropolis Black";
+    font-weight: bolder;
+    font-size: 56px;
 }
-.email {
-    color: #36357E;
-    display: flex;
-    font-size: 32px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
+
+.section-cadastro-titulo-container > h1:nth-child(1) {
+    color: #ffffff;
 }
-.input {
-    width: 15%;
-    height: 50px;
-    background-color: #36357E;
+.section-cadastro-titulo-container > h1:nth-child(2) {
+    color: #FE3600;
+}
+
+.section-cadastro-subtitulo-container  h5 {
+    color: #ffffff;
+}
+
+.section-cadastro-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section-cadastro-input-container div p {
+    color: #ffffff;
+    margin: 8px 0px;
+    font-size: 12px;
+}
+
+.section-cadastro-input-container > div:nth-child(2) > span {
+    color: #EA3800;
+    font-size: 12px;
+    margin-top: -0.18px;
+    margin-left: 48px;
+}
+
+.section-cadastro-input {
+    width: 248px;
+    padding-left: 8px;
+    height: 32px;
+    border: none;
+    border-radius: 4px;
+}
+
+.section-cadastro-button {
+    margin-top: 8px;
+    border: none;
+    background-color: #FE3600;
+    padding: 8px 72px;  
     color: white;
-    border-radius: 6px;
-}
-.id {
-    color: #36357E;
-    display: flex;
-    font-size: 32px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-
-}
-.inputs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.paragrafo {
-    display: flex;
-    flex-wrap: wrap;
-    
-
-}
-.paragrafo-one {
-    display: flex;
-    font-size: 18px;
-}
-.senha {
-    color: #36357E;
-    display: flex;
-    font-size: 32px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-}
-.conta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 80px;
-
-}
-.criar {
-    background-color: #36357E;
-    color: white;
-    font-size: 30px;
-    height: 60px;
-    width: 10%;
+    border-radius: 56px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Metropolis Black", sans-serif;
 }
