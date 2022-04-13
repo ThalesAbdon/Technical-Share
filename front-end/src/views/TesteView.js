@@ -20,6 +20,7 @@ export default function TesteView() {
   const [modalShow, setModalShow] = React.useState(false);
   const [search, setSearch] = React.useState("");
   const [filteredProfiles, setFilteredProfiles] = React.useState([]);
+  const [visible, setVisible] = useState(false);
   
   
   async function filter(){
@@ -27,6 +28,7 @@ export default function TesteView() {
       const data = await api.get(`/api/search?skills=${tratamento}`)
       console.log(tratamento)
       setFilteredProfiles(data.data)
+      setVisible(true)
   }
 
   //coisas do calendario
@@ -243,19 +245,16 @@ const [id,setId] = useState('');
         <Container>
             <Row className="justify-content-center">
                 <h1>Encontre um <b>mentor</b></h1>
-                <InputGroup className="input py-3" size="sm">
+                <InputGroup className="input py-3 mb-5" size="sm">
                     <FormControl type = "text" aria-label="Large" aria-describedby="inputGroup-sizing-md" placeholder="Digite aqui uma skill que você quer aprender"
                     onChange={e => setSearch(e.target.value)}
                     value = {search}   
                    />      
-                              
-                </InputGroup>
-                 <div>
-                <Button onClick={filter}>
+                           <button className="btn-search" onClick={filter}>
                     Pesquisar
-                </Button>
-                </div>
-                <h2>Estes são os mentores com a <b>skill escolhida</b></h2>
+                </button>   
+                </InputGroup>
+               {visible && <h2>Estes são os mentores com a <b>skill escolhida</b></h2>}
             </Row>
         </Container>
     </section>  
