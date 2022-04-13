@@ -9,6 +9,7 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import moment from 'moment';
 import Auth from "../Auth/Auth";
+import Profile from '../components/MentorsGrid';
 
 export default function TesteView() {
   
@@ -105,7 +106,7 @@ const [id,setId] = useState('');
                                   <Row className="align-items-center">
                                     <Col sm={6}>
                                     
-                                  <div className="skills-item-modal" key={profile._id}> {index} </div> 
+                                  <div className="skills-item-modal" > {index} </div> 
                                     </Col>
                                     <Col>
                                     xxx
@@ -266,7 +267,7 @@ const [id,setId] = useState('');
     <section>
       <Container className="px-5 py-3 mb-5">
           <Row className="d-flex align-items-center justify-content-center pt-3">
-              {mentors}
+              {mentors.length === 0 ? <Profile/> : mentors}
           </Row>
       </Container>
     </section>
