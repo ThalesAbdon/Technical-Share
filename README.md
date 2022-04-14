@@ -1,6 +1,6 @@
 # MENT🍊RANGE - SQUAD 4
 <h1 align="center">
-    <img alt="MENT🍊RANGE" src="assets/images/capa_my_turn.png" />
+    <img alt="MENT🍊RANGE" src="Banner/banner.jpg" />
 </h1>
 
 <ol>
