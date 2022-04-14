@@ -25,7 +25,7 @@ escolhendo a skill de sua preferência.
 Utilizamos Node.js com Express para criar o backend da aplicação, codificado no sentido de repassar dados estáticos para consumo de uma API.
 Essa integração entre backend e frontend foi realizada utilizando a biblioteca Axios, utilizamos também a possibilidade de autenticação utilizando JWT. 
 Na estilização do frontend utilizamos CSS puro com bootstrap no intuito de termos mais flexibilidade para compor os layouts. O código foi criado a partir da biblioteca
-React com o uso do javascript. Também utilizou-se o mongodb com banco e mongo atlas como cluster para armazenar os dados do banco.
+React com o uso do javascript. Também utilizou-se o mongodb como banco e mongo atlas como cluster para armazenar os dados do banco.
 
 <h2 id="comorodaroprojeto">Como rodar o projeto?</h2>
 
