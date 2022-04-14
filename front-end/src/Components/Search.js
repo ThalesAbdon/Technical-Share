@@ -39,6 +39,7 @@ export default function Search() {
   const [hour, setHour] = React.useState(false);
   function hourClick(h){
     setHour(h)
+    setButtonAgendar(true)
   }
 
   //filtra os mentores pela skill
@@ -76,6 +77,7 @@ export default function Search() {
 
   //faz abrir o modal com o perfil e a agenda
   const [modalShow, setModalShow] = React.useState(false);
+  const [buttonAgendar, setButtonAgendar] = useState(false);
   function MyVerticallyCenteredModal(props) {
     return (
         <Modal {...props} size="xl" aria-labelledby="contained-modal-title-vcenter" centered >
@@ -147,7 +149,9 @@ export default function Search() {
           </Container>
         </Modal.Body>
         <Row className="justify-content-end">
+          {buttonAgendar && 
           <button onClick= {() => handleSubmit()} onChange={setId(profile._id)} className="schedule-modal">Agendar</button>
+          }
         </Row>
       </Modal>
     );
@@ -238,7 +242,7 @@ export default function Search() {
               <ul>
                 {mentor.horariosDisponiveis.map((index) => {
                   return (
-                    <div className="hour">{index}</div>   
+                    <div className="time-modal">{index}</div>   
                   );
                 })}
               </ul> 
