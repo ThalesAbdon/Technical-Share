@@ -1,3 +1,6 @@
+@import './colors';
+
+
 .react-calendar {
     width: 470px !important;
     border: unset !important;
@@ -6,11 +9,13 @@
     font-family: 'Montserrat', sans-serif;
     padding: 10px 5px 15px 7px;
 
-    button,
-    button:hover {
-        background-color: #EA3800 !important;
+    button {
+        background-color: $dark-orange;
         color: #fff;
         border-radius: 10px !important;
+    }
+    button:hover {
+        background-color: $orange !important;
     }
 
     .react-calendar__tile--active {
