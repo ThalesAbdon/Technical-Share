@@ -1,4 +1,4 @@
-# Detalhamento dos resultados de desenvolvimento do Squad-8 
+# Detalhamento dos resultados de desenvolvimento da Squad-4
 
 <ol>
         <li> <a href="#desing-interface">Implementação do desing da interface</a></li>
@@ -10,6 +10,7 @@
 <h2 id="desing-interface">Implementação do desing da interface</h2>
 
 <h2 id="calendario">Calendário Funcional</h2>
+Para a criação do calendário utilizamos a biblioteca react-calendar e sua estilização é resultado de um trabalho manual, mudando totalmente a cara do que se parece o calendário de forma nativa. O calendário está pré-setado para identificar o dia atual e não aceitar agendamentos em dias anteriores a este, e setamos também para que não seja possível agendar mentoria em períodos superiores a 30 dias.
 
 <h2 id="chat">Chat</h2>
 Depois que possibilitamos o usuário a fazer um agendamento, é necessário a comunicação entre o mentor e o mentorado foi dai que surgiu a ideia de
