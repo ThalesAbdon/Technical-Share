@@ -1,14 +1,15 @@
 # MENT🍊RANGE - SQUAD 4
 <h1 align="center">
-    <img alt="MENT🍊RANGE" src="assets/images/capa_my_turn.png" />
+    <img alt="MENT🍊RANGE" src="Banner/banner.jpg" />
 </h1>
 
 <ol>
-    <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#sobre">Sobre</a></li>
         <li> <a href="#especificacoes">Especificações</a></li>
         <li> <a href="#comorodaroprojeto">Como Rodar o Projeto?</a> </li>
         <li> <a href="#resultados"> Resultados de Desenvolvimento</a> </li>
         <li> <a href="#features">Features</a> </li>
+        <li> <a href="#conteudoxterno">Conteúdo externo</a></li>
     <li><a href="#licenca">Licença</a></li>
 </ol>
 
@@ -85,4 +86,12 @@ senha: carlos123
     * **03** - Histórico de mentorias
     * **04** - Criação de cadastro(no Front)
     * **05** - Criação de acesso ao perfil completo(no Front).
+ 
+<h2 id="conteudoxterno">Conteúdo Externo</h2> 
+
+* 💻Quer saber as funcionalidades do nosso app? Basta assistir nosso [vídeo de funcionalidades](colocar link no youtube)!💻
+* ✍🏻 Ah, não esqueça de ler o nosso [artigo](https://medium.com/@belterionath/mentorange-eafcd6af1beb) feito por nossa maravilhosa equipe de UX. ✍🏻
+* 📺 Nosso [Pitch](https://www.youtube.com/watch?v=Vz9h-YlN8iI)! 📺
+
+ 
 
