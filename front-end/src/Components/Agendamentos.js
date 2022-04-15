@@ -12,6 +12,9 @@ import './Buttons.scss';
 
 
 export default function MeusAgendamentos () {
+    
+
+
 
     function delay(n){
         return new Promise(function(resolve){
@@ -58,6 +61,9 @@ export default function MeusAgendamentos () {
     //token do user
     const token = localStorage.getItem('token');
     useEffect(() => {
+        if(!token){
+            return history("/Login")
+        }
         api
         .get("/api/listarAgendaUser/",{headers:{'x-access-token': token}})
         .then((response) => {
