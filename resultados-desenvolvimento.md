@@ -9,6 +9,8 @@
 
 <h2 id="desing-interface">Implementação do desing da interface</h2>
 
+A implementação desing da interface seguiu o que foi proposto pela equipe de UX, a partir da visualização do [protótipo](https://www.figma.com/file/czNpnDcxajtwgCeWWLVXQq/Protótipos-Interface-FCamara?node-id=0%3A1) feito no Figma. Para isso, foi utilizado HTML,CSS e BOOTSTRAP dentro da aplicação em React. Como a maioria das páginas obedece um padrão(possuem header e footer) decidimos implementá-las separadamente assim como outros componentes.
+
 <h2 id="calendario">Calendário Funcional</h2>
 Para a criação do calendário utilizamos a biblioteca react-calendar e sua estilização é resultado de um trabalho manual, mudando totalmente a cara do que se parece o calendário de forma nativa. O calendário está pré-setado para identificar o dia atual e não aceitar agendamentos em dias anteriores a este, e setamos também para que não seja possível agendar mentoria em períodos superiores a 30 dias.
 
