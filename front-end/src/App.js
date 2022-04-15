@@ -7,6 +7,7 @@ import Chat from "./components/chat";
 import Agendamentos from "./components/Agendamentos";
 import Footer from './components/Footer';
 import TesteViews from "./views/TesteView";
+import Home from "./views"
 import './App.scss';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
 
       <Navbar/>
       <Routes>
+      <Route exact path="/" element={<Home />} />
        {/* <Route path="/" element={<LoginPage />}/> */}
         <Route path="/buscar" element={<SearchMentors/>}/>
         <Route path="/login" element={<LoginPage />}/>
