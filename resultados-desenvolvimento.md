@@ -26,6 +26,6 @@ e assim apenas o mentor e o mentorado possuem acesso ao chat. Infelizmente por f
 ![alt](https://github.com/ThalesAbdon/Technical-Share/blob/main/images/Chat-3.png)
 
 <h2 id="autenticacao">Autenticação </h2>
-Implementação do processo de autenticação e o token é gerado no back-end usando JSON Web Token (JWT). No React, chamamos o end-point Login e passamos as credenciais corretas de usuário e senha, o back-end retorna um token e através do localStorage setamos o token no navegador. OBS: existe um expirein que faz o token expirar em um determinado tempo, foi setado: 1600 como padrão.
+Implementação do processo de autenticação e o token é gerado no back-end usando JSON Web Token (JWT). No React, chamamos o end-point Login e passamos as credenciais corretas de usuário e senha, o back-end retorna um token e através do localStorage setamos o token no navegador. OBS: existe um expiresIn que faz o token expirar em um determinado tempo, foi setado: 1600 como padrão.
 
 ![alt](https://github.com/ThalesAbdon/Technical-Share/blob/main/images/Auth-1.png)
