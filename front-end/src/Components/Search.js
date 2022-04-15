@@ -46,7 +46,8 @@ export default function Search() {
   const [filteredProfiles, setFilteredProfiles] = React.useState([]);
   async function filter(){
     var tratamento = search.replace("#","%23")
-    const data = await api.get(`/api/search?skills=${tratamento}`)
+    let tratamentoString = tratamento.toUpperCase();
+    const data = await api.get(`/api/search?skills=${tratamentoString}`)
     console.log(tratamento)
     setFilteredProfiles(data.data)
     setVisible(true)
