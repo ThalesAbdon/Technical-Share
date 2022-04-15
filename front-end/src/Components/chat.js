@@ -6,7 +6,7 @@ import Auth from "../Auth/Auth";
 import Join from "./Join/Join";
 import Chat from "./Chat/Chat";
 
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect("http://18.229.15.164:5000");
 
 function Mensagem() {
 	const [chatVisible, setChatVisible] = useState(false);
