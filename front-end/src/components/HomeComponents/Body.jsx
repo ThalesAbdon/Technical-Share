@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"
-import foguete from "../../assets/foguete.png"
+import foguete from "../../resources/foguete.png"
 
 import "./Body.css"
 function Body() {
