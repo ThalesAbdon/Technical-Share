@@ -10,7 +10,7 @@
         <li> <a href="#resultados"> Resultados de Desenvolvimento</a> </li>
         <li> <a href="#features">Features</a> </li>
         <li> <a href="#conteudoxterno">Conteúdo externo</a></li>
-    <li><a href="#licenca">Licença</a></li>
+        <li><a href="#licenca">Licença</a></li>
 </ol>
 
 <h2 id="sobre">Sobre</h2> 
@@ -92,5 +92,8 @@ senha: carlos123
 * ✍🏻 Ah, não esqueça de ler o nosso [artigo](https://medium.com/@belterionath/mentorange-eafcd6af1beb) feito por nossa maravilhosa equipe de UX. ✍🏻
 * 📺 Nosso [Pitch](https://www.youtube.com/watch?v=Vz9h-YlN8iI)! 📺
 
- 
+ <h2 id="licenca">Licença</h2>
+
+[LICENSE](https://github.com/ThalesAbdon/Technical-Share/blob/main/LICENSE)
+
 
