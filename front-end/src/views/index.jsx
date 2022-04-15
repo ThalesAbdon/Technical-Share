@@ -1,4 +1,4 @@
-import Body from "../../components/HomeComponents/Body";
+import Body from "../Components/Body";
 function Home() {
     return (
         <>
