@@ -1,6 +1,6 @@
 # MENT🍊RANGE - SQUAD 4
 <h1 align="center">
-    <img alt="MENT🍊RANGE" src="Banner/banner.jpg" />
+    <img alt="MENT🍊RANGE" src="images/banner.jpg" />
 </h1>
 
 <ol>
