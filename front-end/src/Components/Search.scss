@@ -1,0 +1,121 @@
+@import './colors';
+
+ul, li {
+    list-style-type: none;
+    display: inline;
+    padding: 0 !important;
+    font-size: .875rem;
+}
+
+img.avatar {
+    width:6.3125rem;
+    height: 6.3125rem;
+    border-radius: 100%;
+    float:left;
+    margin-right: .675rem;
+}
+
+.modal {
+    font-family: 'Montserrat', sans-serif;
+    color: $blue-font;
+
+    h6 {
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
+
+    .card-text{
+        font-weight: 600;
+    }
+
+    .modal-header, .card{
+        border: unset !important;
+
+        button.btn-close {
+            background:$dark-orange;
+            border-radius: 100%;
+            padding: 1rem;
+            margin-top:-35px;
+            margin-right: -35px;
+            opacity: 1;
+        }
+    }
+    
+    .box-label {
+        padding:.6875rem;
+        color:#fff;
+        text-align:center;
+        background-color: #EA3800;
+        font-size: 1.125rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        max-width: 29.375rem;
+        border-radius:10px;
+        margin:10px 0px;
+    }
+
+    .space {
+        margin: 0 .1rem;
+    }
+
+}
+
+section.cards {
+    margin-top: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+
+    h1 {
+        font-size: 2.18rem;
+        color: #fff;
+        text-align: center;
+        font-weight: 700;
+
+        b {
+            color: $dark-orange;
+        }
+    }
+
+    h2 {
+        font-size: 1.875rem;
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+
+        b {
+            color:$dark-orange;
+        }
+    }
+
+    .input {
+        max-width: 33.25rem;
+    }
+
+    input::placeholder {
+        font-family: 'Montserrat';
+        font-size: .875rem;
+        text-align: center;
+    }
+
+    .card {
+        max-width:31.25rem;
+        background-color: $light-orange;
+        color: $blue-font;
+        z-index: -1;
+        border-radius: unset;
+
+        h6 {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 1rem;
+        }
+    }
+}
+
+.availableTimes {
+    font-weight: 700;
+    font-size: .875rem;
+    padding-top: 10px;
+}

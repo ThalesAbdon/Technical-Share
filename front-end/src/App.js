@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+//import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SearchMentors from './views/SearchMentors';
+import LoginPage from "./views/Login";
+import Navbar from './views/Navbar';
+import Chat from "./components/chat";
+import Agendamentos from "./components/Agendamentos";
+import Footer from './components/Footer';
+import TesteViews from "./views/TesteView";
+import Home from "./views"
+import './App.scss';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+
+      <Navbar/>
+      <Routes>
+      <Route exact path="/" element={<Home />} />
+       {/* <Route path="/" element={<LoginPage />}/> */}
+        <Route path="/buscar" element={<SearchMentors/>}/>
+        <Route path="/login" element={<LoginPage />}/>
+        {/* <Route path="/teste" element={<FindMentors />}/> */}
+        <Route path="/chat" element={<Chat/>}/>
+        <Route path="/agendamentos" element = {<Agendamentos/>}/>
+      </Routes>
+      <Footer/>
+
+    </BrowserRouter>
   );
 }
 

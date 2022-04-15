@@ -1,0 +1,35 @@
+@import './colors';
+
+section {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+
+    h1{
+        font-size: 3.125rem;
+        font-weight: 800;
+        text-align: center;
+
+        span {
+            color: $orange;
+        }
+    }
+
+    h5 {
+        font-size: 1.125rem;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    input.form-control {
+        max-width: 30.75rem !important;
+    }
+    
+    .box {
+        max-width: 37.5rem !important;
+    }
+
+        .form-label {
+            font-size: .875rem;
+            text-align: left !important;
+        }
+}

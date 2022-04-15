@@ -1,0 +1,37 @@
+@import '../colors';
+
+.join-container {
+	justify-content: center;
+	align-items: center;
+	height: 18.75rem;
+	max-width: 25rem !important;
+	padding: 1rem;
+	background-color: $light-orange;
+	color: $blue-font;
+	text-align: center;
+
+	-webkit-box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.3);
+
+	h1 {
+		color: $dark-orange;
+	}
+}
+
+/* .join-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+} */
+
+.join-body input {
+	padding-left: 3px;
+	/* margin: 10px;
+	outline: none;
+	border: 1px solid black; */
+}
+.btn-join {
+	margin-top: 10px !important;
+}
