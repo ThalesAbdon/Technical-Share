@@ -1,13 +1,16 @@
-.home-big-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 24px;
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.75rem;
+    font-weight: 800;
+}
+h1 b {
+    color: #EA3800;
 }
 
 .home-imagem-foguete-container {
-    margin-top: 16%;
-    margin-left: 32px;
+    /* position: absolute; */
+    bottom:0;
+    left:0;
 
 }
 .home-imagem-foguete-container > img {
