@@ -86,7 +86,7 @@ export default function MeusAgendamentos () {
                 </Col>
                 <Col sm={12} md={4}>
                     <button className="cancel" onClick={() => cancelarHorario(mentor._id)}>Cancelar mentoria</button>
-                    <button className="chat"><FontAwesomeIcon icon={faComments} /></button>
+                    <button className="chat" onClick={() => goChat(mentor._id)}><FontAwesomeIcon icon={faComments} /></button>
                 </Col>
             </Row>
         </div>
