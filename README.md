@@ -88,7 +88,7 @@ senha: carlos123
  
 <h2 id="conteudoxterno">Conteúdo Externo</h2> 
 
-* 💻Quer saber as funcionalidades do nosso app? Basta assistir nosso [vídeo de funcionalidades](colocar link no youtube)!💻
+* 💻Quer saber as funcionalidades do nosso app? Basta assistir nosso [vídeo de funcionalidades](https://www.youtube.com/watch?v=nBCjLKI_cVY)!💻
 * ✍🏻 Ah, não esqueça de ler o nosso [artigo](https://medium.com/@belterionath/mentorange-eafcd6af1beb) feito por nossa maravilhosa equipe de UX. ✍🏻
 * 📺 Nosso [Pitch](https://www.youtube.com/watch?v=Vz9h-YlN8iI)! 📺
 
