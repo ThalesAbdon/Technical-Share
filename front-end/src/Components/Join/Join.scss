@@ -1,27 +1,31 @@
-
+@import '../colors';
 
 .join-container {
-	display: flex;
-	flex-direction: column;
-    margin-left: 725px;
-	margin-top: 275px;
 	justify-content: center;
 	align-items: center;
-	height: 200px;
-	width: 400px;
-	background-color: floralwhite;
+	height: 18.75rem;
+	max-width: 25rem !important;
+	padding: 1rem;
+	background-color: $light-orange;
+	color: $blue-font;
+	text-align: center;
 
 	-webkit-box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.3);
 	box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.3);
+
+	h1 {
+		color: $dark-orange;
+	}
 }
 
-.join-body {
+/* .join-body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 50px;
-}
+} */
+
 .join-body input {
 	padding-left: 3px;
 	/* margin: 10px;
