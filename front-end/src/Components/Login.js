@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Container,Form, Button, Row, Col} from 'react-bootstrap';
 import './Login.scss';
 import api from '../services/api'
@@ -14,6 +14,11 @@ function Login() {
     const [email,setEmail] = useState('');
     const [senha,setSenha] = useState('');
     const history = useNavigate('');
+    const token = localStorage.getItem('token');
+    useEffect(() => {
+        if(token){
+            return history("/Agendamentos")
+        }})
 
     async function login(e){
         e.preventDefault(); 
