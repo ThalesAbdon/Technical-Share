@@ -1,3 +1,5 @@
+@import './colors';
+
 .swal-modal {
     max-width: 27.06rem  !important;
     border-radius: 41px !important;
@@ -5,7 +7,7 @@
     .swal-title {
         font-family: 'Montserrat', sans-serif  !important;
         font-weight: 700  !important;
-        color: #1B1A3E  !important;
+        color: $blue-font  !important;
     }
 
     .swal-footer{
@@ -23,13 +25,13 @@
             font-size: 1.25rem  !important;
             font-weight: 800  !important;
             color: #fff  !important;
-            background-color: #FE5517;
+            background-color: $orange;
             border: none !important;
         }
     }
 
     .swal-overlay{
-        background-color: #1B1A3E;
+        background-color: $dark-blue;
     }
     button{
         border: unset !important;

@@ -243,7 +243,7 @@ export default function Search() {
               <ul>
                 {mentor.horariosDisponiveis.map((index) => {
                   return (
-                    <div className="time-modal">{index}</div>   
+                    <div className="time-card">{index}</div>   
                   );
                 })}
               </ul> 

@@ -12,14 +12,12 @@ const Footer = () => (
                     Mentorange &copy; Todos os direitos reservados
                 </Col>
                 <Col sm={12} md={5} className="logos d-flex justify-content-between">
-
                     <img src={LogoFC}
                     width="109"/>
                     <img src={Logo}
                     width="235"/>
                 </Col>
-                <Col sm={12} md={3} className="help text-end">
-                    
+                <Col sm={12} md={3}>
                 </Col>
             </Row>
         </Container>
