@@ -1,3 +1,5 @@
+@import './colors';
+
 section {
     text-align: left;
     
@@ -8,7 +10,7 @@ section {
         font-weight: 700;
         padding: .75rem;
         border-radius: 24px;
-        background-color: #FE5517;
+        background-color: $orange;
     }
 
     .box-mentorias {
@@ -25,9 +27,7 @@ section {
         h6 {
             color: grey;
         }
-
-
-
+        
         h5 {
             color: #1D1D45;
             font-size: .875rem;
@@ -51,35 +51,6 @@ section {
             max-width: 55rem !important;
             border-radius: 24px;
             margin-top: .625rem;
-        
-            button {
-                padding: .125rem .812rem;
-                font-size: .875rem;
-                margin-left: .25rem;
-                border-radius: 24px;
-                color: #fff;
-                display: inline-block;
-                border: unset;
-            }
-            .sim{
-                background-color: #EA3800;
-            }
-            .nao {
-                background-color: #1D1D45;
-            }
-            .alterar{
-                margin-top: .1875rem;
-                background-color: #FE5517;
-            }
-            button.alterar:disabled{
-                background-color: #FE885C;
-            }
-        
-            .label-confirmar {
-                color: #1A3E38;
-                font-weight: 700;
-                font-size: .7rem;
-            }
         }
     }
 }

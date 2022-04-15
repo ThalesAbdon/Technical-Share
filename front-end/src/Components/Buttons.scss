@@ -90,3 +90,29 @@
     border: unset;
     padding: unset;
 }
+
+.login:hover {
+    color: $dark-blue;
+}
+
+.cancel {
+    padding: .425rem .812rem;
+    font-size: .875rem;
+    margin-left: .25rem;
+    border-radius: 24px;
+    color: #fff;
+    display: inline-block;
+    border: unset;
+    background-color: $dark-orange;
+}
+
+.chat {
+    padding: .425rem .812rem;
+    font-size: .875rem;
+    margin-left: .25rem;
+    border-radius: 24px;
+    color: #fff;
+    display: inline-block;
+    border: unset;
+    background-color: $dark-blue;
+}
