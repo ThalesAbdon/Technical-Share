@@ -6,10 +6,10 @@ const generateToken = require("../authentication/jsonwebtoken");
 class User {
   
   async create(req, res) {
-    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha} = req.body;
+    const { name, work, seniority, skills, bio,horariosDisponiveis,email,senha,softSkills} = req.body;
     const hash = bcrypt.hashSync(senha,10)
     if(horariosDisponiveis){
-      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha:hash});
+      await UserModel.create({ name, work, seniority, skills, bio,horariosDisponiveis,email,senha:hash,softSkills});
     return res.status(201).json({ message: "Usuário criado!" });
     }
     return res.status(400).json({message: "Você precisa definir horários disponivéis!"})
@@ -35,6 +35,13 @@ class User {
     const user = await UserModel.find().select("-senha");
     return res.status(200).json({ user });
   }
+
+
+  async getId(req, res) {
+   const user = await horarioModel.find({user:{ _id: req.user.id}}).populate({path:"idAluno", select: "-senha"})
+    return res.status(200).json({user});
+  }
+
 
   async update(req, res) {
     if (req.file) {
@@ -65,38 +72,55 @@ class User {
     return res.status(200).json({ message: "Usuário Deletado!" });
   }
 
+  async searchName(req,res){
+    const user = await UserModel.findOne({_id: req.user.id})
+    console.log(user)
+    return res.status(200).json(user.name)
+  }
+
   async search(req,res){
     const user = await UserModel.find(req.query)
-    console.log(req.query)
+    console.log(req.query.skills)
     return res.status(200).json(user)
   }
    
   async agendar(req,res){
     try{
-    const horariomarcado = await horarioModel.create({
+      if(req.params.id === req.user.id){
+        return res.json({message: "Você não pode dar mentoria para si mesmo!"})
+      }
+      const horariomarcado = await horarioModel.create({
       horario: req.body.horario, 
+      idAluno: req.user.id,
       user: req.params.id
     })
     return res.status(200).json({message: "Horário marcado!"})
     }catch(error){
+      console.log(error)
       return res.json({message: "Horário já Agendado!"})
     }
   }
   
 
   async listarAgendaUser(req,res){
-    try{
-    const horarios = await horarioModel.find({user: req.params.id}).populate('user')
+   /* try{
+    const horarios = await horarioModel.find({$or:
+      [{idAluno: req.user.id},{user:req.user.id}]
+    }).populate({path:'idAluno', select: '-senha'}).populate({path: 'user', select: '-senha'})
     return res.status(200).json(horarios)
     } catch(error){
       return res.status(200).json([])
-    }
+    }*/
+
+    const user = await horarioModel.find({$or:[{idAluno:req.user.id}]}).populate({path:"user", select: "-senha"})
+    console.log(user)
+    return res.status(200).json({user});
   }
 
 
   //ajeitar para listar apenas um user
   async listarTodosOsHorarios(req,res){
-    const horarios = await horarioModel.find().populate('user')
+    const horarios = await horarioModel.find().populate({path: 'user', select: '-senha'})
     return res.status(200).json(horarios)
   }
 

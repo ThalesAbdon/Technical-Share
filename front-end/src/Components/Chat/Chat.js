@@ -8,7 +8,14 @@ import Auth from "../../Auth/Auth"
 export default function Chat({ socket }) {
 	const [message, setMessage] = useState("");
 	const [messageList, setMessageList] = useState([]);
+	const room = localStorage.getItem("room");
 
+	  function handleKeyDown(e){
+		if(e.keyCode === 13) { 
+			sendMessage()
+	  }
+	}
+	
 	useEffect(() => {
 		socket.on("receiveMessage", (data) => {
 			setMessageList((list) => [...list, data]);
@@ -20,8 +27,9 @@ export default function Chat({ socket }) {
 	},[])
 	 
 	const sendMessage = () => {
+	    console.log(room)
 		if (message.trim() === "") return;
-		socket.emit("message", { userId: socket.id, name: socket.name, message });
+		socket.emit("message", { userId: socket.id, name: socket.name, message, room});
 		setMessage("");
 		clearInput();
 	};
@@ -42,8 +50,10 @@ export default function Chat({ socket }) {
 				</div>
 			</div>
 			<div className="chat-footer">
-				<Input className="message-input" placeholder="Write a message..." type="text" id="input" onChange={(e) => setMessage(e.target.value)} />
-				<SendIcon className="btn-send" color="primary" onClick={() => sendMessage()} />
+				<Input className="message-input" placeholder="Write a message..." type="textarea" id="input" 
+				onKeyDown={handleKeyDown}
+				onChange={(e) => setMessage(e.target.value)} />
+				<SendIcon className="btn-send" id="button" color="primary" onClick={() => sendMessage()} />
 			</div>
 		</div>
 	);

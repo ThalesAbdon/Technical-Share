@@ -1,12 +1,10 @@
 import React from 'react';
-import Profile from '../components/MentorsGrid';
 import Search from '../components/Search';
 
-const FindMentors = () => (
+const SearchMentors = () => (
     <>
         <Search />
-        <Profile/>
     </>
 );
 
-export default FindMentors;
+export default SearchMentors;

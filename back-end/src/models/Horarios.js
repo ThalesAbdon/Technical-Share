@@ -7,6 +7,12 @@ const horarioSchema = new mongoose.Schema({
         type: String,
         unique: true,
     },
+
+    idAluno:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required: true,
+    },
     //Fazendo relacionamento com model User 
     user:{
        type: mongoose.Schema.Types.ObjectId,
