@@ -71,7 +71,7 @@ export default function Search() {
   }
     swal({
       title: "Agendamento realizado com sucesso!",
-      button: "Meus agendamentos",
+      button: "Ok",
     });
     setModalShow(false)
   }
